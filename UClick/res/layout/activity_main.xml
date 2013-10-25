@@ -8,19 +8,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
-    
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="115dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress" >
-
-        <requestFocus />
-    </EditText>
 
     <EditText
         android:id="@+id/editText2"
@@ -31,31 +18,56 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/reg_done"
+    <EditText
+        android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_below="@+id/editText2"
-        android:text="Sign In" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/signup_main"
-        android:layout_width="fill_parent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_done"
-        android:layout_below="@+id/reg_done"
-        android:layout_marginTop="46dp"
-        android:onClick="register"
+        android:layout_alignLeft="@+id/signin_main"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/signin_main"
+        android:layout_marginBottom="69dp"
+        android:layout_marginTop="125dp"
+        android:background="@color/btn"
         android:text="Sign Up" />
 
     <Button
         android:id="@+id/forgot_main"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignLeft="@+id/signup_main"
-        android:layout_below="@+id/signup_main"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/signup_main"
+        android:layout_marginBottom="26dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/btn"
         android:text="Forgot Password?" />
-    
-  
+
+    <Button
+        android:id="@+id/signin_main"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginBottom="193dp"
+        android:background="@color/btn"
+        android:text="Sign In" />
+
 </RelativeLayout>

@@ -12,10 +12,11 @@
         -->
     </style>
 
-    <!-- Application theme. -->
+    <!-- Application theff33b5e5me. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <color name="bg">#8AC0E4</color>
+    <color name="btn">#95C4E3</color>
+    <color name="txt">#ff33b5e5</color>
 
 </resources>

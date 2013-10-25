@@ -11,7 +11,8 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int bg=0x7f070000;
+        public static final int btn=0x7f070000;
+        public static final int txt=0x7f070001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -27,26 +28,49 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000e;
-        public static final int b_layout=0x7f09000c;
-        public static final int editText1=0x7f090000;
-        public static final int editText2=0x7f090001;
-        public static final int editText3=0x7f090007;
-        public static final int editText4=0x7f09000a;
-        public static final int editText5=0x7f09000b;
+        public static final int Button01=0x7f09000c;
+        public static final int Button02=0x7f09000d;
+        public static final int Button03=0x7f09000e;
+        public static final int Button04=0x7f09000f;
+        public static final int Button05=0x7f090011;
+        public static final int Button06=0x7f090012;
+        public static final int Button07=0x7f090013;
+        public static final int Button08=0x7f090014;
+        public static final int action_settings=0x7f090024;
+        public static final int b_layout=0x7f090021;
+        public static final int btn_startquiz=0x7f090008;
+        public static final int button2=0x7f090019;
+        public static final int button3=0x7f090006;
+        public static final int button4=0x7f09001a;
+        public static final int button5=0x7f09001b;
+        public static final int button6=0x7f09001c;
+        public static final int button7=0x7f090016;
+        public static final int button8=0x7f090017;
+        public static final int editText1=0x7f090001;
+        public static final int editText2=0x7f090000;
+        public static final int editText3=0x7f09001e;
+        public static final int editText4=0x7f09001f;
+        public static final int editText5=0x7f090020;
         public static final int forgot_main=0x7f090004;
-        public static final int reg_done=0x7f090002;
-        public static final int reg_goback=0x7f09000d;
-        public static final int signup_main=0x7f090003;
-        public static final int textView1=0x7f090006;
-        public static final int textView2=0x7f090009;
-        public static final int textView3=0x7f090008;
-        public static final int textView4=0x7f090005;
+        public static final int linearLayout1=0x7f090005;
+        public static final int linearLayout2=0x7f09000b;
+        public static final int linearLayout3=0x7f09000a;
+        public static final int linearLayout4=0x7f090015;
+        public static final int linearLayout5=0x7f090010;
+        public static final int reg_finish=0x7f090022;
+        public static final int reg_goback=0x7f090023;
+        public static final int signin_main=0x7f090003;
+        public static final int signup_main=0x7f090002;
+        public static final int textView1=0x7f090009;
+        public static final int textView2=0x7f090007;
+        public static final int textView3=0x7f090018;
+        public static final int textView4=0x7f09001d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int quiz=0x7f030001;
-        public static final int register=0x7f030002;
+        public static final int clicker=0x7f030001;
+        public static final int quiz=0x7f030002;
+        public static final int register=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -73,7 +97,7 @@ public final class R {
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f060000;
-        /**  Application theme. 
+        /**  Application theff33b5e5me. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;

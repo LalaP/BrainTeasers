@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class RegisterActivity extends Activity implements OnClickListener {
-	private Button goback;
+	private Button goback, finish;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +16,8 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.register);
 		this.goback = (Button) this.findViewById(R.id.reg_goback);
 		goback.setOnClickListener(this);
+		this.finish = (Button) this.findViewById(R.id.reg_finish);
+		finish.setOnClickListener(this);
 
 	}
 
@@ -27,6 +29,11 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 		}
 
+		if (v == finish) {
+			Intent intent = new Intent(this, QuizActivity.class);
+			startActivity(intent);
+
+		}
 	}
 
 }

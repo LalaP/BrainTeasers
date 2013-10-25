@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="fill"
         android:text=" Create an account:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/btn" />
 
     <EditText
         android:id="@+id/editText1"
@@ -56,7 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.10"
         android:text="    Password must contain at least 8 characters!"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/btn"
+        android:textColorLink="@color/txt" />
 
     <EditText
         android:id="@+id/editText4"
@@ -83,20 +86,28 @@
         android:gravity="top" >
 
         <Button
-            android:id="@+id/reg_goback"
+            android:id="@+id/reg_finish"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="&lt;&lt;Go Back" />
-
-        <Button
-            android:id="@+id/reg_done"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:text="    Done    " />
+            android:layout_marginLeft="164dp"
+            android:background="@color/btn"
+            android:text="Finish" />
+
+        <Button
+            android:id="@+id/reg_goback"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="159dp"
+            android:background="@color/btn"
+            android:text="Cancel" />
 
     </RelativeLayout>
 
