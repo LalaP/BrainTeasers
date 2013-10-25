@@ -45,8 +45,8 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int register=0x7f030001;
-        public static final int uclick=0x7f030002;
+        public static final int quiz=0x7f030001;
+        public static final int register=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;

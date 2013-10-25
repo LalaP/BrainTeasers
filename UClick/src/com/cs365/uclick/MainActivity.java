@@ -2,10 +2,13 @@ package com.cs365.uclick;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.cs365.uclick.RegisterActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -32,8 +35,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		final Context context = this;
 		if(v==signupButton) {
-			setContentView(R.layout.register);
+			
+			Intent intent = new Intent(context, RegisterActivity.class);
+			startActivity(intent);
+			
 		}
 		
 	}
