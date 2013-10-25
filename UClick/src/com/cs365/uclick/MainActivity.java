@@ -8,21 +8,28 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+
 import com.cs365.uclick.RegisterActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private Button signupButton;
-	
-	
-	
+	private Button signup, signin;
+	private EditText email, pass;
+	public static User usr = new User("Alexis", "Lkhagvadorj", "alexis@hotmail.com");
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		this.signupButton = (Button) this.findViewById(R.id.signup_main);
-		signupButton.setOnClickListener(this);		
-		
+		this.signup = (Button) this.findViewById(R.id.signup_main);
+		signup.setOnClickListener(this);
+		this.signin = (Button) this.findViewById(R.id.signin_main);
+		signin.setOnClickListener(this);
+
+		this.email = (EditText) this.findViewById(R.id.quiz_id);
+		this.pass = (EditText) this.findViewById(R.id.quiz_pass);
+
 	}
 
 	@Override
@@ -36,13 +43,23 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		final Context context = this;
-		if(v==signupButton) {
-			
+		if (v == signup) {
+
 			Intent intent = new Intent(context, RegisterActivity.class);
 			startActivity(intent);
-			
+
 		}
-		
+
+		if (v == signin) {
+
+			if (this.email.getText().toString().equals(usr.getEmail())
+					&& this.pass.getText().toString().equals("tuya")) {
+				Intent intent = new Intent(context, QuizActivity.class);
+				startActivity(intent);
+
+			}
+		}
+
 	}
 
 }

@@ -10,16 +10,16 @@
     tools:context=".MainActivity" >
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/quiz_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/quiz_id"
+        android:layout_below="@+id/quiz_id"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/quiz_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -62,10 +62,10 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignLeft="@+id/quiz_pass"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_below="@+id/editText2"
+        android:layout_alignRight="@+id/quiz_pass"
+        android:layout_below="@+id/quiz_pass"
         android:layout_marginBottom="193dp"
         android:background="@color/btn"
         android:text="Sign In" />

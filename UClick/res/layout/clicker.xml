@@ -12,7 +12,7 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/preq"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,31 +21,29 @@
             android:text="&lt;&lt;Pre" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txt_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.53"
-            android:text="            Take Quiz"
+            android:layout_weight="0.04"
+            android:text="Question: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
+        <TextView
+            android:id="@+id/q_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.09"
+            android:text="#"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
         <Button
-            android:id="@+id/btn_startquiz"
+            android:id="@+id/nextq"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/btn"
             android:text="Nex>>" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="24dp"
-        android:text="Question:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -56,28 +54,28 @@
         android:layout_marginTop="23dp" >
 
         <Button
-            android:id="@+id/Button01"
+            android:id="@+id/E"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="E" />
 
         <Button
-            android:id="@+id/Button02"
+            android:id="@+id/F"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="F" />
 
         <Button
-            android:id="@+id/Button03"
+            android:id="@+id/G"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="G" />
 
         <Button
-            android:id="@+id/Button04"
+            android:id="@+id/H"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,28 +91,28 @@
         android:layout_marginTop="24dp" >
 
         <Button
-            android:id="@+id/Button05"
+            android:id="@+id/I"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I" />
 
         <Button
-            android:id="@+id/Button06"
+            android:id="@+id/J"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="J" />
 
         <Button
-            android:id="@+id/Button07"
+            android:id="@+id/K"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="K" />
 
         <Button
-            android:id="@+id/Button08"
+            android:id="@+id/L"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,7 +128,7 @@
         android:layout_marginBottom="32dp" >
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/cancel_click"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -150,47 +148,37 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp" >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/A"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="A" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/B"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="B" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/C"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="C" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/D"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="D" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="#"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
