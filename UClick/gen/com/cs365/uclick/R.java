@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int bgcolor=0x7f070002;
         public static final int btn=0x7f070000;
         public static final int txt=0x7f070001;
     }
@@ -25,7 +26,9 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int background=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int uclick=0x7f020002;
     }
     public static final class id {
         public static final int A=0x7f090018;
@@ -40,11 +43,12 @@ public final class R {
         public static final int J=0x7f090012;
         public static final int K=0x7f090013;
         public static final int L=0x7f090014;
-        public static final int action_settings=0x7f090024;
+        public static final int action_settings=0x7f090025;
         public static final int b_layout=0x7f090021;
         public static final int button8=0x7f090017;
         public static final int cancel_click=0x7f090016;
         public static final int forgot_main=0x7f090004;
+        public static final int imageView1=0x7f090024;
         public static final int linearLayout1=0x7f090005;
         public static final int linearLayout2=0x7f09000b;
         public static final int linearLayout3=0x7f09000a;
@@ -71,6 +75,7 @@ public final class R {
         public static final int clicker=0x7f030001;
         public static final int quiz=0x7f030002;
         public static final int register=0x7f030003;
+        public static final int splash=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;

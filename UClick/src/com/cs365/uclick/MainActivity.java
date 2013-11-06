@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cs365.uclick.RegisterActivity;
 
@@ -56,7 +57,9 @@ public class MainActivity extends Activity implements OnClickListener {
 					&& this.pass.getText().toString().equals("tuya")) {
 				Intent intent = new Intent(context, QuizActivity.class);
 				startActivity(intent);
-
+			}
+			else {
+				Toast.makeText(context, "Wrong password!", Toast.LENGTH_SHORT).show();
 			}
 		}
 

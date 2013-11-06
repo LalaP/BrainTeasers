@@ -1,5 +1,4 @@
 <resources>
-
     <!--
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -18,5 +17,6 @@
     </style>
     <color name="btn">#95C4E3</color>
     <color name="txt">#ff33b5e5</color>
+    <color name="bgcolor">#F3F3F3</color>
 
 </resources>
