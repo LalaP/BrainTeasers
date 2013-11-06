@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+#contac img
+{
+	display: inline-block;
+    padding-right:50px; 
+	list-style-type:none;
+	border-radius: 5px;
+}
+
+#contac{
+	width:500px;
+	font-size:0px;
+	margin:auto;
+}
+
+#contac a{
+	margin:2px;  /* the space between images */
+	border: 4px solid #333; /* the border and its color */
+	display:inline-block; /* fo make pictures fited to the borders */
+	border-radius: 10px;
+}
+
+#contac a:hover{
+	border:2px solid white;
+	transition:all .3s ease-in;
+}
+

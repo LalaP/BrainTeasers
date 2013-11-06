@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	vertical-align:middle;
+	background-color: #231F20;
+}
+#page-wrap{
+	width: 800px;
+	margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+}
+#logo{
+	width: 90%;
+	heigth: 150px;
+}
+nav{ 
+	width: 90%; 
+	background-color: #FFF;
+	height:60px;
+	float: left;
+	}
+section{
+	width: 90%; 
+	height:300px;
+	float: left;
+	font-family:"Comic Sans MS", cursive, Arial;
+	font-size:medium;
+	color: #FFF;
+	}
+footer{width: 90%;
+	   height:50px;
+	   clear: both;	   
+	}
+#odd-D img{
+	float:left
+}
+
+#even-D img{
+	float: right
+}
+a:hover{
+	text-decoration:none; 
+	color:#F00;
+}
+a{
+	text-decoration:none; 
+	color:#FFF;
+}

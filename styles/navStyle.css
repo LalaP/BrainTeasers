@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+#navigation
+{
+	font-family: "Comic Sans MS", cursive, Arial;
+	list-style:none;
+}
+#navigation ul
+{
+	list-style-type:none;
+}
+#navigation li
+{
+	float:right; 
+	padding-right:50px; 
+	list-style-type:none;
+}
+#navigation a{
+	text-decoration:none; 
+	color:#000;
+	font-size:18px;
+}
+#navigation a:hover{
+	text-decoration:none; 
+	color:#F00;
+}
