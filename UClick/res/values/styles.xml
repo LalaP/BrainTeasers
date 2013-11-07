@@ -15,8 +15,11 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <color name="btn">#95C4E3</color>
+    <color name="btn">#6B74D7</color>
     <color name="txt">#ff33b5e5</color>
     <color name="bgcolor">#F3F3F3</color>
+    <color name="txtcolor1">#FFFFFF</color>
+    <dimen name="txtsize">14dp</dimen>
+    <dimen name="btntxtsize">12dp</dimen>
 
 </resources>

@@ -28,8 +28,8 @@ public class QuizActivity extends Activity implements OnClickListener {
 		this.welcome = (TextView) this.findViewById(R.id.txt_welcome);
 		this.welcome.setText("Welcome " + MainActivity.usr.getFirstName());
 
-		this.id = (EditText) this.findViewById(R.id.quiz_id);
-		this.pass = (EditText) this.findViewById(R.id.quiz_pass);
+		this.id = (EditText) this.findViewById(R.id.log_fname);
+		this.pass = (EditText) this.findViewById(R.id.lname);
 
 	}
 

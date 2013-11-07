@@ -4,7 +4,7 @@
     android:layout_height="fill_parent" xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/buttonLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -148,7 +148,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1"
+        android:layout_below="@+id/buttonLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp" >
 

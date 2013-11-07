@@ -18,16 +18,17 @@ public class RegisterActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register);
+
+		this.fname = (EditText) this.findViewById(R.id.log_fname);
+		this.lname = (EditText) this.findViewById(R.id.lname);
+		this.email = (EditText) this.findViewById(R.id.usr_email);
+		this.pass1 = (EditText) this.findViewById(R.id.usr_pass1);
+		this.pass2 = (EditText) this.findViewById(R.id.usr_pass2);
+
 		this.goback = (Button) this.findViewById(R.id.reg_goback);
 		goback.setOnClickListener(this);
 		this.finish = (Button) this.findViewById(R.id.reg_finish);
 		finish.setOnClickListener(this);
-
-		this.fname = (EditText) this.findViewById(R.id.quiz_id);
-		this.lname = (EditText) this.findViewById(R.id.quiz_pass);
-		this.email = (EditText) this.findViewById(R.id.usr_email);
-		this.pass1 = (EditText) this.findViewById(R.id.usr_pass1);
-		this.pass2 = (EditText) this.findViewById(R.id.usr_pass2);
 
 	}
 

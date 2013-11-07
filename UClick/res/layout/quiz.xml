@@ -5,18 +5,18 @@
     android:gravity="fill_vertical" >
 
     <EditText
-        android:id="@+id/quiz_pass"
+        android:id="@+id/lname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/quiz_id"
-        android:layout_below="@+id/quiz_id"
+        android:layout_alignLeft="@+id/log_fname"
+        android:layout_below="@+id/log_fname"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/quiz_id"
+        android:id="@+id/log_fname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_welcome"
@@ -33,7 +33,7 @@
         android:id="@+id/q_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/quiz_id"
+        android:layout_alignBottom="@+id/log_fname"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="44dp"
         android:layout_marginLeft="23dp"
@@ -46,9 +46,9 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/quiz_pass"
-        android:layout_alignRight="@+id/quiz_pass"
-        android:layout_below="@+id/quiz_pass"
+        android:layout_alignLeft="@+id/lname"
+        android:layout_alignRight="@+id/lname"
+        android:layout_below="@+id/lname"
         android:layout_marginTop="16dp"
         android:background="@color/btn"
         android:text="Start Quiz" />
