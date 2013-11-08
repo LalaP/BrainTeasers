@@ -19,18 +19,18 @@ public class MainActivity extends Activity implements OnClickListener {
 	private EditText email, pass;
 	public static User usr = new User("Alexis", "Lkhagvadorj", "alexis@hotmail.com");
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.login);
 		this.signup = (Button) this.findViewById(R.id.signup_main);
 		signup.setOnClickListener(this);
 		this.signin = (Button) this.findViewById(R.id.signin_main);
 		signin.setOnClickListener(this);
 
-		this.email = (EditText) this.findViewById(R.id.quiz_id);
-		this.pass = (EditText) this.findViewById(R.id.quiz_pass);
-
+		this.email = (EditText) this.findViewById(R.id.fname);
+		this.pass = (EditText) this.findViewById(R.id.lname);
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				startActivity(intent);
 			}
 			else {
-				Toast.makeText(context, "Wrong password!", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "Wrong Email or password", Toast.LENGTH_SHORT).show();
 			}
 		}
 

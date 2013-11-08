@@ -6,17 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bgcolor" >
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="match_parent"
-            android:layout_height="312dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="59dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/uclick" />
+        android:background="@drawable/mainbg" >
 
     </RelativeLayout>
 

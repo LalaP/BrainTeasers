@@ -3,18 +3,18 @@ package com.cs365.uclick;
 public class Quiz {
 
 	private String id;
-	private String pass;
+	//private String pass;
 	private int questions;
 	private char[] answers;
 
-	public Quiz(String id, int q) {
+	public Quiz(String id) {
 		this.id = id;
-		this.questions = q;
+		//this.questions = q;
 	}
 
 	public Quiz() {
 		this.id = null;
-		this.pass = null;
+		//this.pass = null;
 		this.questions = 0;
 		answers = new char[0];
 	}
@@ -24,9 +24,9 @@ public class Quiz {
 
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+//	public void setPass(String pass) {
+//		this.pass = pass;
+//	}
 
 	public void setQuestions(int total) {
 		this.questions = total;

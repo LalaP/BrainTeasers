@@ -19,6 +19,7 @@ public class ClickerActivity extends Activity implements OnClickListener {
 	private TextView q;
 	public static int n = 1;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

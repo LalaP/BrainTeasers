@@ -8,12 +8,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuizActivity extends Activity implements OnClickListener {
 	private Button startquiz, back;
 	private TextView welcome;
-	private EditText id, pass;
-	public static Quiz quiz = new Quiz("q1117", 10);
+	private EditText id;
+	public static Quiz quiz = new Quiz("q1117");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class QuizActivity extends Activity implements OnClickListener {
 		this.welcome = (TextView) this.findViewById(R.id.txt_welcome);
 		this.welcome.setText("Welcome " + MainActivity.usr.getFirstName());
 
-		this.id = (EditText) this.findViewById(R.id.quiz_id);
-		this.pass = (EditText) this.findViewById(R.id.quiz_pass);
+		this.id = (EditText) this.findViewById(R.id.fname);
+		//this.pass = (EditText) this.findViewById(R.id.lname);
 
 	}
 
@@ -41,6 +42,9 @@ public class QuizActivity extends Activity implements OnClickListener {
 			if (this.id.getText().toString().equals(quiz.getId())) {
 				Intent intent = new Intent(this, ClickerActivity.class);
 				startActivity(intent);
+			}
+			else{
+				Toast.makeText(getBaseContext(), "Quiz Id not Valid", Toast.LENGTH_SHORT).show();
 			}
 
 		}

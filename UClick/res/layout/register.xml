@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -8,107 +9,140 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/q_number"
-        android:layout_width="262dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill"
-        android:text=" Create an account:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/btn" />
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/btn"
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/quiz_id"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.50"
-        android:ems="10"
-        android:hint="First Name" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="8dp"
+            android:text="CREATE AN ACCOUNT"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/txtcolor1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/quiz_pass"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.50"
-        android:ems="10"
-        android:hint="Last Name" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/usr_email"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.50"
-        android:ems="10"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress" />
+    <Button
+        android:id="@+id/reg_goback"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/buttonLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/reg_back" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.13"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <Button
+        android:id="@+id/reg_finish"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/reg_finish"
+        android:paddingLeft="20dp"
+        android:text="DONE"
+        android:textColor="@color/btn"
+        android:textColorLink="@color/txtcolor1"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txt_welcome"
+    <LinearLayout
+        android:id="@+id/reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.10"
-        android:text="    Password must contain at least 8 characters!"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/btn"
-        android:textColorLink="@color/txt" />
+        android:layout_below="@+id/reg_goback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/reg_bg"
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/usr_pass1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.43"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/fname"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="center_vertical|top"
+            android:hint="First Name"
+            android:singleLine="true"
+            android:textColor="@color/txtcolor1"
+            android:textColorLink="@color/txt"
+            android:textSize="@dimen/txtsize" />
 
-    <EditText
-        android:id="@+id/usr_pass2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.16"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/lname"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:ems="10"
+            android:hint="Last Name"
+            android:singleLine="true"
+            android:textSize="@dimen/txtsize" />
 
-    <RelativeLayout
-        android:id="@+id/b_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top" >
+        <EditText
+            android:id="@+id/usr_email"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textSize="@dimen/txtsize" />
 
-        <Button
-            android:id="@+id/reg_finish"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="164dp"
-            android:background="@color/btn"
-            android:text="Finish" />
+        <EditText
+            android:id="@+id/usr_pass1"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="@dimen/txtsize" />
 
-        <Button
-            android:id="@+id/reg_goback"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="159dp"
-            android:background="@color/btn"
-            android:text="Cancel" />
+        <EditText
+            android:id="@+id/usr_pass2"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="@dimen/txtsize" />
+    </LinearLayout>
 
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>

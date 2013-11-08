@@ -23,8 +23,8 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		this.finish = (Button) this.findViewById(R.id.reg_finish);
 		finish.setOnClickListener(this);
 
-		this.fname = (EditText) this.findViewById(R.id.quiz_id);
-		this.lname = (EditText) this.findViewById(R.id.quiz_pass);
+		this.fname = (EditText) this.findViewById(R.id.fname);
+		this.lname = (EditText) this.findViewById(R.id.lname);
 		this.email = (EditText) this.findViewById(R.id.usr_email);
 		this.pass1 = (EditText) this.findViewById(R.id.usr_pass1);
 		this.pass2 = (EditText) this.findViewById(R.id.usr_pass2);
