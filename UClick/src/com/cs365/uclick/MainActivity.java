@@ -24,13 +24,24 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
+<<<<<<< HEAD
+=======
+		
+		this.email = (EditText) this.findViewById(R.id.log_fname);
+		this.pass = (EditText) this.findViewById(R.id.lname);
+		
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
 		this.signup = (Button) this.findViewById(R.id.signup_main);
 		signup.setOnClickListener(this);
 		this.signin = (Button) this.findViewById(R.id.signin_main);
 		signin.setOnClickListener(this);
 
+<<<<<<< HEAD
 		this.email = (EditText) this.findViewById(R.id.fname);
 		this.pass = (EditText) this.findViewById(R.id.lname);
+=======
+		
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
 	}
 
 	@Override

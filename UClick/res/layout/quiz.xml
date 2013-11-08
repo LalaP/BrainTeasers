@@ -5,7 +5,22 @@
     android:gravity="fill_vertical" >
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/fname"
+=======
+        android:id="@+id/lname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/log_fname"
+        android:layout_below="@+id/log_fname"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/log_fname"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_welcome"
@@ -22,7 +37,11 @@
         android:id="@+id/q_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignBottom="@+id/fname"
+=======
+        android:layout_alignBottom="@+id/log_fname"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="44dp"
         android:layout_marginLeft="23dp"
@@ -35,9 +54,15 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignLeft="@+id/fname"
         android:layout_alignRight="@+id/fname"
         android:layout_below="@+id/fname"
+=======
+        android:layout_alignLeft="@+id/lname"
+        android:layout_alignRight="@+id/lname"
+        android:layout_below="@+id/lname"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
         android:layout_marginTop="16dp"
         android:background="@color/btn"
         android:text="Start Quiz" />

@@ -40,6 +40,7 @@ public final class R {
         public static final int uclick=0x7f020008;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int A=0x7f090009;
         public static final int B=0x7f09000a;
         public static final int Button01=0x7f09000d;
@@ -70,6 +71,47 @@ public final class R {
         public static final int usr_email=0x7f09001a;
         public static final int usr_pass1=0x7f09001b;
         public static final int usr_pass2=0x7f09001c;
+=======
+        public static final int A=0x7f090013;
+        public static final int B=0x7f090014;
+        public static final int C=0x7f090015;
+        public static final int D=0x7f090016;
+        public static final int E=0x7f090007;
+        public static final int F=0x7f090008;
+        public static final int G=0x7f090009;
+        public static final int H=0x7f09000a;
+        public static final int I=0x7f09000c;
+        public static final int J=0x7f09000d;
+        public static final int K=0x7f09000e;
+        public static final int L=0x7f09000f;
+        public static final int RelativeLayout1=0x7f09001c;
+        public static final int action_settings=0x7f090026;
+        public static final int button8=0x7f090012;
+        public static final int buttonLayout=0x7f090000;
+        public static final int cancel_click=0x7f090011;
+        public static final int forgot_main=0x7f09001b;
+        public static final int imageView1=0x7f090025;
+        public static final int linearLayout2=0x7f090006;
+        public static final int linearLayout3=0x7f090005;
+        public static final int linearLayout4=0x7f090010;
+        public static final int linearLayout5=0x7f09000b;
+        public static final int lname=0x7f090018;
+        public static final int log_fname=0x7f090017;
+        public static final int nextq=0x7f090004;
+        public static final int preq=0x7f090001;
+        public static final int q_number=0x7f090003;
+        public static final int reg=0x7f090021;
+        public static final int reg_finish=0x7f090020;
+        public static final int reg_goback=0x7f09001f;
+        public static final int signin_main=0x7f090019;
+        public static final int signup_main=0x7f09001a;
+        public static final int textView1=0x7f09001e;
+        public static final int textView4=0x7f09001d;
+        public static final int txt_welcome=0x7f090002;
+        public static final int usr_email=0x7f090022;
+        public static final int usr_pass1=0x7f090023;
+        public static final int usr_pass2=0x7f090024;
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
     }
     public static final class layout {
         public static final int clicker=0x7f030000;

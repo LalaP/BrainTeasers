@@ -77,7 +77,11 @@
         android:orientation="vertical" >
 
         <EditText
+<<<<<<< HEAD
             android:id="@+id/fname"
+=======
+            android:id="@+id/log_fname"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_marginBottom="16dp"
@@ -90,6 +94,7 @@
             android:singleLine="true"
             android:textColor="@color/txtcolor1"
             android:textColorLink="@color/txt"
+<<<<<<< HEAD
             android:textSize="@dimen/txtsize" />
 
         <EditText
@@ -106,6 +111,37 @@
 
         <EditText
             android:id="@+id/usr_email"
+=======
+            android:textSize="@dimen/txtsize" >
+
+            <requestFocus />
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/lname"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+<<<<<<< HEAD
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+=======
+            android:ems="10"
+            android:hint="Last Name"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
+            android:singleLine="true"
+            android:textSize="@dimen/txtsize" />
+
+        <EditText
+<<<<<<< HEAD
+=======
+            android:id="@+id/usr_email"
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_marginBottom="10dp"
@@ -119,6 +155,7 @@
             android:textSize="@dimen/txtsize" />
 
         <EditText
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
             android:id="@+id/usr_pass1"
             android:layout_width="200dp"
             android:layout_height="35dp"

@@ -12,7 +12,11 @@
     tools:context=".MainActivity" >
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/fname"
+=======
+        android:id="@+id/log_fname"
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
         android:layout_width="200dp"
         android:layout_height="35dp"
         android:layout_alignParentTop="true"
@@ -21,7 +25,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="3dp"
         android:hint="Email"
+<<<<<<< HEAD
         android:textColor = "#FFFFFF"
+=======
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
         android:inputType="textEmailAddress"
         android:textSize="@dimen/txtsize" />
 
@@ -29,6 +36,7 @@
         android:id="@+id/lname"
         android:layout_width="200dp"
         android:layout_height="35dp"
+<<<<<<< HEAD
         android:layout_below="@+id/fname"
         android:layout_centerHorizontal="true"
         android:hint="Password"
@@ -36,6 +44,13 @@
         android:textColor = "#FFFFFF"
         android:textSize="@dimen/txtsize" />
     	
+=======
+        android:layout_below="@+id/log_fname"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="@dimen/txtsize" />
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
 
     <LinearLayout
         android:id="@+id/buttonLayout"
