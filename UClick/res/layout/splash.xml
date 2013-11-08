@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bgcolor" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+<<<<<<< HEAD
+        android:background="@drawable/mainbg" >
+=======
+        android:background="@color/bgcolor" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/uclick" />
+>>>>>>> 5e90aee4d2a8e0d19aabc4434ffea6c7bed51f9d
+
+    </RelativeLayout>
+
+</FrameLayout>

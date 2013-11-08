@@ -1,4 +1,4 @@
 BrainTeasers
 ============
 
-CS 356 Project - Android App for POCLICK
+CS 356 Project - Android App for UCLICK
