@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegisterActivity extends Activity implements OnClickListener {
 	private Button back, register, register2;
@@ -115,6 +116,27 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		}
 
 		if (v == register2 || v == register) {
+
+			if(fname.getText().toString().equals("")){
+				Toast.makeText(this, "Enter your fisrt name", Toast.LENGTH_SHORT)
+				.show();
+			}
+			if(lname.getText().toString().equals("")){
+				Toast.makeText(this, "Enter your last name", Toast.LENGTH_SHORT)
+				.show();
+			}
+			if(email.getText().toString().equals("") || !(email.getText().toString().contains("@"))){
+				Toast.makeText(this, "Enter a valid email", Toast.LENGTH_SHORT)
+				.show();
+			}
+			if(pass1.getText().toString().length() < 6 ){
+				Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT)
+				.show();
+			}
+			if(!(pass1.getText().toString().equals(pass2.getText().toString()))){
+				Toast.makeText(this, "password doesn't match", Toast.LENGTH_SHORT)
+				.show();
+			}
 			if (!fname.getText().toString().equals("")
 					&& !lname.getText().toString().equals("")
 					&& !email.getText().toString().equals("")

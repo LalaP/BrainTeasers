@@ -100,15 +100,29 @@ public class LoginActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 
 		} else if (v == signin) {
-
+			if(!(this.email.getText().toString().contains("@"))){
+				Toast.makeText(this, "Wrong email format", Toast.LENGTH_SHORT)
+				.show();
+			}
+			if(this.pass.getText().toString().length() < 6){
+				Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT)
+				.show();
+			}
+			
 			if (this.email.getText().toString().equals(usr.getEmail())
 					&& this.pass.getText().toString().equals("tuya")) {
 				Intent intent = new Intent(this, ProfileActivity.class);
 				startActivity(intent);
 			} else {
-				Toast.makeText(this, "Wrong password!", Toast.LENGTH_SHORT)
+				Toast.makeText(this, "Password and email don't match", Toast.LENGTH_SHORT)
 						.show();
 			}
+
+			if (this.email.getText().toString().equals(usr.getEmail())
+					&& this.pass.getText().toString().equals("tuya")) {
+				Intent intent = new Intent(this, ProfileActivity.class);
+				startActivity(intent);
+			} 
 		} else if (v == forgotpass) {
 			Intent intent = new Intent(this, PasswordActivity.class);
 			startActivity(intent);
