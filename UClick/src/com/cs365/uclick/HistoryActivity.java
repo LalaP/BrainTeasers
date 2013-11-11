@@ -1,0 +1,93 @@
+package com.cs365.uclick;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ExpandableListView;
+import android.widget.Spinner;
+
+public class HistoryActivity extends Activity implements OnClickListener {
+	private Spinner menu;
+	List<String> quizList;
+	List<String> detailList;
+	Map<String, List<String>> quizCollections;
+	ExpandableListView quizView;
+	private EditText searchbox;
+	private Button search;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.history);
+
+		this.menu = (Spinner) this.findViewById(R.id.mainmenu);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.Menu, R.layout.spinnerstyle);
+		adapter.setDropDownViewResource(R.layout.dropdown);
+		menu.setAdapter(adapter);
+
+		search = (Button) this.findViewById(R.id.histbtn_search);
+		searchbox = (EditText) this.findViewById(R.id.hist_search);
+
+		search.setOnClickListener(this);
+
+		createGroupList();
+		createCollection();
+		System.out.println(quizList.size());
+		System.out.println(detailList.size());
+		quizView = (ExpandableListView) findViewById(R.id.pro_qzlist);
+		final ExpandibleListAdapter expListAdapter = new ExpandibleListAdapter(
+				this, quizList, quizCollections);
+		quizView.setAdapter(expListAdapter);
+	}
+
+	private void createGroupList() {
+		quizList = new ArrayList<String>();
+		quizList.add("19831973");
+		quizList.add("12938107");
+
+	}
+
+	private void createCollection() {
+		String[] quiz1 = { "Date: 11/17/85", "Professor: Raheja",
+				"Subject: CS555", "Description: Midterm", "Points: 20/20" };
+		String[] quiz2 = { "Date: 11/17/85", "Professor: Raheja",
+				"Subject: CS555", "Description: Midterm", "Points: 20/20" };
+
+		quizCollections = new LinkedHashMap<String, List<String>>();
+
+		for (String quiz : quizList) {
+			if (quiz.equals("19831973")) {
+				loadChild(quiz1);
+			} else if (quiz.equals("12938107"))
+				loadChild(quiz2);
+
+			quizCollections.put(quiz, detailList);
+		}
+	}
+
+	private void loadChild(String[] qdetails) {
+		detailList = new ArrayList<String>();
+		for (String detail : qdetails)
+			detailList.add(detail);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v== search) {
+			
+		}
+		
+	}
+
+}
