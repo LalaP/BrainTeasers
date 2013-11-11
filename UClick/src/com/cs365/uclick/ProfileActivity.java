@@ -8,6 +8,8 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -56,7 +58,7 @@ public class ProfileActivity extends Activity implements OnClickListener,
 
 		edit.setOnClickListener(this);
 		start.setOnClickListener(this);
-		menu.setOnItemSelectedListener(this);
+		// menu.setOnItemSelectedListener(this);
 
 		loadDefaultValues();
 		createGroupList();
@@ -65,6 +67,76 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		final ExpandibleListAdapter expListAdapter = new ExpandibleListAdapter(
 				this, quizList, quizCollections);
 		quizHistory.setAdapter(expListAdapter);
+
+		email.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
+		pass1.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
+		pass2.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
 	}
 
 	private void createGroupList() {
@@ -123,11 +195,11 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
 		// TODO Auto-generated method stub
-		if (selectionCurrent != pos) {
-			TextView txt = (TextView) view;
-			System.out.println(txt.getText().toString());
-		}
-		selectionCurrent = pos;
+		/*
+		 * if (selectionCurrent != pos) { TextView txt = (TextView) view;
+		 * System.out.println(txt.getText().toString()); } selectionCurrent =
+		 * pos;
+		 */
 	}
 
 	@Override
