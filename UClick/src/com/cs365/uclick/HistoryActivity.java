@@ -6,16 +6,22 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class HistoryActivity extends Activity implements OnClickListener {
+public class HistoryActivity extends Activity implements OnClickListener,
+		OnItemSelectedListener {
 	private Spinner menu;
 	List<String> quizList;
 	List<String> detailList;
@@ -23,6 +29,7 @@ public class HistoryActivity extends Activity implements OnClickListener {
 	ExpandableListView quizView;
 	private EditText searchbox;
 	private Button search;
+	private boolean tag;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,8 @@ public class HistoryActivity extends Activity implements OnClickListener {
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+		menu.setOnItemSelectedListener(this);
+		tag = false;
 
 		search = (Button) this.findViewById(R.id.histbtn_search);
 		searchbox = (EditText) this.findViewById(R.id.hist_search);
@@ -84,10 +93,37 @@ public class HistoryActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		if(v== search) {
-			
+		if (v == search) {
+
 		}
-		
+
+	}
+
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view, int pos,
+			long id) {
+		// TODO Auto-generated method stub
+		TextView v = (TextView) view;
+		Toast.makeText(this, v.getText().toString(), Toast.LENGTH_SHORT).show();
+
+		if (tag) {
+			if (v.getText().equals("YOUR ACCOUNT")) {
+				Intent intent = new Intent(this, ProfileActivity.class);
+				startActivity(intent);
+
+			} else if (v.getText().equals("SIGN OUT")) {
+				Intent intent = new Intent(this, LoginActivity.class);
+				startActivity(intent);
+			}
+		}
+		tag = true;
+
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

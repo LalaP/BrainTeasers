@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -15,12 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("HandlerLeak")
-public class ClickerActivity extends Activity implements OnClickListener {
+public class ClickerActivity extends Activity implements OnClickListener,
+		OnItemSelectedListener {
 
 	private Button pre, next, cancel, submit, answer, A, B, C, D, E, F, G, H,
 			I;
 	private TextView qnumber;
 	private Spinner menu;
+	private int selectionCurrent;
 	public static int qn = 1;
 
 	@Override
@@ -33,6 +37,9 @@ public class ClickerActivity extends Activity implements OnClickListener {
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+
+		menu.setOnItemSelectedListener(this);
+		selectionCurrent = menu.getSelectedItemPosition();
 
 		qnumber = (TextView) this.findViewById(R.id.clik_qn);
 		qnumber.setText(Integer.toString(qn));
@@ -160,6 +167,38 @@ public class ClickerActivity extends Activity implements OnClickListener {
 
 			}
 		};
+
+	}
+
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view, int pos,
+			long id) {
+		// TODO Auto-generated method stub
+		TextView v = (TextView) view;
+
+		if (selectionCurrent != pos) {
+			System.out.println(v.getText().toString());
+
+			if (v.getText().equals("YOUR ACCOUNT")) {
+				Intent intent = new Intent(this, ProfileActivity.class);
+				startActivity(intent);
+
+			} else if (v.getText().equals("YOUR HISTORY")) {
+				Intent intent = new Intent(this, HistoryActivity.class);
+				startActivity(intent);
+
+			} else if (v.getText().equals("SIGN OUT")) {
+				Intent intent = new Intent(this, LoginActivity.class);
+				startActivity(intent);
+			}
+		}
+		selectionCurrent = pos;
+
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
 
 	}
 }

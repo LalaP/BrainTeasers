@@ -32,13 +32,13 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	private List<String> detailList;
 	private Map<String, List<String>> quizCollections;
 	public static Quiz quiz = new Quiz("q1117", 10);
-	private int selectionCurrent;
+	private boolean tag;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.profile);
-
+		tag = false;
 		this.menu = (Spinner) this.findViewById(R.id.mainmenu);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.Menu, R.layout.spinnerstyle);
@@ -54,11 +54,9 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		edit = (Button) this.findViewById(R.id.probtn_edit);
 		start = (Button) this.findViewById(R.id.probtn_start);
 
-		selectionCurrent = menu.getSelectedItemPosition();
-
 		edit.setOnClickListener(this);
 		start.setOnClickListener(this);
-		// menu.setOnItemSelectedListener(this);
+		menu.setOnItemSelectedListener(this);
 
 		loadDefaultValues();
 		createGroupList();
@@ -195,11 +193,19 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
 		// TODO Auto-generated method stub
-		/*
-		 * if (selectionCurrent != pos) { TextView txt = (TextView) view;
-		 * System.out.println(txt.getText().toString()); } selectionCurrent =
-		 * pos;
-		 */
+		if (tag) {
+			TextView v = (TextView) view;
+			if (v.getText().equals("YOUR HISTORY")) {
+				Intent intent = new Intent(this, HistoryActivity.class);
+				startActivity(intent);
+
+			} else if (v.getText().equals("SIGN OUT")) {
+				Intent intent = new Intent(this, LoginActivity.class);
+				startActivity(intent);
+			}
+		}
+		tag = true;
+
 	}
 
 	@Override
