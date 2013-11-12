@@ -8,10 +8,13 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+=======
+>>>>>>> origin/uclick1.1
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -23,7 +26,10 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> origin/uclick1.1
 
 public class ProfileActivity extends Activity implements OnClickListener,
 		OnItemSelectedListener {
@@ -31,11 +37,19 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	private ExpandableListView quizHistory;
 	private EditText fname, email, pass1, pass2, quizname;
 	private Button edit, start;
+<<<<<<< HEAD
 	private TextView usrname;
 	private List<String> quizList;
 	private List<String> detailList;
 	private Map<String, List<String>> quizCollections;
 	private boolean tag;
+=======
+	private List<String> quizList;
+	private List<String> detailList;
+	private Map<String, List<String>> quizCollections;
+	public static Quiz quiz = new Quiz("q1117", 10);
+	private int selectionCurrent;
+>>>>>>> origin/uclick1.1
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +61,13 @@ public class ProfileActivity extends Activity implements OnClickListener,
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+<<<<<<< HEAD
 		tag = false;
 
 		usrname = (TextView) this.findViewById(R.id.pro_usrname);
 		usrname.setText(MyData.usr.getFirstName());
+=======
+>>>>>>> origin/uclick1.1
 
 		fname = (EditText) this.findViewById(R.id.pro_fname);
 		email = (EditText) this.findViewById(R.id.pro_email);
@@ -61,6 +78,11 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		edit = (Button) this.findViewById(R.id.probtn_edit);
 		start = (Button) this.findViewById(R.id.probtn_start);
 
+<<<<<<< HEAD
+=======
+		selectionCurrent = menu.getSelectedItemPosition();
+
+>>>>>>> origin/uclick1.1
 		edit.setOnClickListener(this);
 		start.setOnClickListener(this);
 		menu.setOnItemSelectedListener(this);
@@ -72,6 +94,7 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		final ExpandibleListAdapter expListAdapter = new ExpandibleListAdapter(
 				this, quizList, quizCollections);
 		quizHistory.setAdapter(expListAdapter);
+<<<<<<< HEAD
 
 		email.addTextChangedListener(new TextWatcher() {
 
@@ -145,6 +168,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 			}
 		});
 
+=======
+>>>>>>> origin/uclick1.1
 	}
 
 	private void createGroupList() {
@@ -179,8 +204,13 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	}
 
 	private void loadDefaultValues() {
+<<<<<<< HEAD
 		this.fname.setText(MyData.usr.getFirstName());
 		this.email.setText(MyData.usr.getEmail());
+=======
+		this.fname.setText(LoginActivity.usr.getFirstName());
+		this.email.setText(LoginActivity.usr.getEmail());
+>>>>>>> origin/uclick1.1
 	}
 
 	@Override
@@ -189,6 +219,7 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		if (v == edit) {
 			// update data
 			// show dialog box
+<<<<<<< HEAD
 			if (MyRegex.isValidEditText(fname.getText().toString())
 					&& MyRegex.isEmailValid(email.getText().toString())
 					&& MyRegex.isValidPassword(pass1.getText().toString())
@@ -251,15 +282,22 @@ public class ProfileActivity extends Activity implements OnClickListener,
 				}
 
 			}
+=======
+>>>>>>> origin/uclick1.1
 
 		} else if (v == start) {
 			// check quiz id
 			// start quiz
+<<<<<<< HEAD
 			if (quizname.getText().toString().equals(MyData.quiz.getId())) {
 				Intent intent = new Intent(this, ClickerActivity.class);
 				startActivity(intent);
 			}
 
+=======
+			Intent intent = new Intent(this, ClickerActivity.class);
+			startActivity(intent);
+>>>>>>> origin/uclick1.1
 		}
 
 	}
@@ -267,6 +305,7 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
+<<<<<<< HEAD
 		String menuItem = ((TextView) view).getText().toString();
 		if (tag) {
 			if (menuItem.equalsIgnoreCase("your history")) {
@@ -280,6 +319,14 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		}
 		tag = true;
 
+=======
+		// TODO Auto-generated method stub
+		if (selectionCurrent != pos) {
+			TextView txt = (TextView) view;
+			System.out.println(txt.getText().toString());
+		}
+		selectionCurrent = pos;
+>>>>>>> origin/uclick1.1
 	}
 
 	@Override

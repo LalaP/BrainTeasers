@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.text.Editable;
 import android.text.TextWatcher;
+=======
+>>>>>>> origin/uclick1.1
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +22,11 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	private Button signup, signin, forgotpass;
 	private EditText email, pass;
+<<<<<<< HEAD
+=======
+	public static User usr = new User("Alexis", "Lkhagvadorj",
+			"alexis@hotmail.com");
+>>>>>>> origin/uclick1.1
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		signup = (Button) this.findViewById(R.id.logbtn_reg);
 		forgotpass = (Button) this.findViewById(R.id.logbtn_pass);
 
+<<<<<<< HEAD
 		email.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -81,6 +90,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 			}
 		});
+=======
+>>>>>>> origin/uclick1.1
 		signin.setOnClickListener(this);
 		signup.setOnClickListener(this);
 		forgotpass.setOnClickListener(this);
@@ -90,7 +101,11 @@ public class LoginActivity extends Activity implements OnClickListener {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+<<<<<<< HEAD
 		// getMenuInflater().inflate(R.menu.main, menu);
+=======
+		//getMenuInflater().inflate(R.menu.main, menu);
+>>>>>>> origin/uclick1.1
 		return true;
 	}
 
@@ -104,17 +119,26 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 		} else if (v == signin) {
 
+<<<<<<< HEAD
 			if (this.email.getText().toString().equals(MyData.usr.getEmail())
+=======
+			if (this.email.getText().toString().equals(usr.getEmail())
+>>>>>>> origin/uclick1.1
 					&& this.pass.getText().toString().equals("tuya")) {
 				Intent intent = new Intent(this, ProfileActivity.class);
 				startActivity(intent);
 			} else {
+<<<<<<< HEAD
 				if (MyRegex.isEmailValid(email.getText().toString())
 						&& MyRegex.isValidPassword(pass.getText().toString())) {
 					Toast.makeText(this, "Wrong Email or Password!",
 							Toast.LENGTH_SHORT).show();
 				}
 
+=======
+				Toast.makeText(this, "Wrong password!", Toast.LENGTH_SHORT)
+						.show();
+>>>>>>> origin/uclick1.1
 			}
 		} else if (v == forgotpass) {
 			Intent intent = new Intent(this, PasswordActivity.class);
@@ -122,4 +146,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 		}
 
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/uclick1.1

@@ -3,14 +3,20 @@ package com.cs365.uclick;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.text.Editable;
 import android.text.TextWatcher;
+=======
+>>>>>>> origin/uclick1.1
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> origin/uclick1.1
 
 public class PasswordActivity extends Activity implements OnClickListener {
 	private EditText email;
@@ -29,6 +35,7 @@ public class PasswordActivity extends Activity implements OnClickListener {
 		back.setOnClickListener(this);
 		send1.setOnClickListener(this);
 		send2.setOnClickListener(this);
+<<<<<<< HEAD
 
 		email.addTextChangedListener(new TextWatcher() {
 
@@ -54,6 +61,8 @@ public class PasswordActivity extends Activity implements OnClickListener {
 
 			}
 		});
+=======
+>>>>>>> origin/uclick1.1
 	}
 
 	@Override
@@ -66,12 +75,17 @@ public class PasswordActivity extends Activity implements OnClickListener {
 
 		else if (v == send1 || v == send2) {
 			// dialog box
+<<<<<<< HEAD
 			if (MyRegex.isEmailValid(email.getText().toString())) {
 				//send password to email
 				Toast.makeText(this, "Password has been sent to your email!",
 						Toast.LENGTH_SHORT).show();
 			}
 
+=======
+			Intent intent = new Intent(this, LoginActivity.class);
+			startActivity(intent);
+>>>>>>> origin/uclick1.1
 		}
 
 	}

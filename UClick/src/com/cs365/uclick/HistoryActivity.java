@@ -6,22 +6,33 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+=======
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+>>>>>>> origin/uclick1.1
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Spinner;
+<<<<<<< HEAD
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class HistoryActivity extends Activity implements OnClickListener,
 		OnItemSelectedListener {
+=======
+
+public class HistoryActivity extends Activity implements OnClickListener {
+>>>>>>> origin/uclick1.1
 	private Spinner menu;
 	List<String> quizList;
 	List<String> detailList;
@@ -29,7 +40,10 @@ public class HistoryActivity extends Activity implements OnClickListener,
 	ExpandableListView quizView;
 	private EditText searchbox;
 	private Button search;
+<<<<<<< HEAD
 	private boolean tag;
+=======
+>>>>>>> origin/uclick1.1
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +55,11 @@ public class HistoryActivity extends Activity implements OnClickListener,
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+<<<<<<< HEAD
 		menu.setOnItemSelectedListener(this);
 		tag = false;
+=======
+>>>>>>> origin/uclick1.1
 
 		search = (Button) this.findViewById(R.id.histbtn_search);
 		searchbox = (EditText) this.findViewById(R.id.hist_search);
@@ -93,6 +110,7 @@ public class HistoryActivity extends Activity implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		if (v == search) {
 
 		}
@@ -127,3 +145,12 @@ public class HistoryActivity extends Activity implements OnClickListener,
 	}
 
 }
+=======
+		if(v== search) {
+			
+		}
+		
+	}
+
+}
+>>>>>>> origin/uclick1.1

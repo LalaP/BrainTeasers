@@ -19,6 +19,7 @@
             android:background="@drawable/menu_bg"
             android:orientation="horizontal" >
 
+<<<<<<< HEAD
             <TextView
                 android:id="@+id/pro_usrname"
                 android:layout_width="250dp"
@@ -32,11 +33,17 @@
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
+=======
+>>>>>>> origin/uclick1.1
             <Spinner
                 android:id="@+id/mainmenu"
                 android:layout_width="100dp"
                 android:layout_height="35dp"
+<<<<<<< HEAD
                 android:layout_marginLeft="20dp"
+=======
+                android:layout_marginLeft="230dp"
+>>>>>>> origin/uclick1.1
                 android:layout_weight="0"
                 android:entries="@array/Menu" />
         </LinearLayout>

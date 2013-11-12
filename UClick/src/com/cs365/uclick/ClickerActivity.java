@@ -8,8 +8,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
+<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+=======
+>>>>>>> origin/uclick1.1
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -17,17 +20,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("HandlerLeak")
+<<<<<<< HEAD
 public class ClickerActivity extends Activity implements OnClickListener,
 		OnItemSelectedListener {
+=======
+public class ClickerActivity extends Activity implements OnClickListener {
+>>>>>>> origin/uclick1.1
 
 	private Button pre, next, cancel, submit, answer, A, B, C, D, E, F, G, H,
 			I;
 	private TextView qnumber;
 	private Spinner menu;
 	public static int qn = 1;
+<<<<<<< HEAD
 	private String answerCurrent;
 	private boolean tag;
 	private TextView quizname;
+=======
+>>>>>>> origin/uclick1.1
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +49,15 @@ public class ClickerActivity extends Activity implements OnClickListener,
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+<<<<<<< HEAD
 		tag = false;
 
 		quizname = (TextView) this.findViewById(R.id.clik_qzname);
 		quizname.setText(MyData.quiz.getId());
 		menu.setOnItemSelectedListener(this);
+=======
+
+>>>>>>> origin/uclick1.1
 		qnumber = (TextView) this.findViewById(R.id.clik_qn);
 		qnumber.setText(Integer.toString(qn));
 
@@ -85,10 +99,16 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v == next) {
+<<<<<<< HEAD
 			if (qn < MyData.quiz.getQuestions()) {
 				Toast.makeText(
 						getBaseContext(),
 						Integer.toString(MyData.quiz.getQuestions()),
+=======
+			if (qn < ProfileActivity.quiz.getQuestions()) {
+				Toast.makeText(getBaseContext(),
+						Integer.toString(ProfileActivity.quiz.getQuestions()),
+>>>>>>> origin/uclick1.1
 						Toast.LENGTH_SHORT).show();
 
 				new Thread(new myRunnable(true)).start();
@@ -111,6 +131,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 			startActivity(intent);
 		} else if (v == A || v == B || v == C || v == D || v == E || v == F
 				|| v == G || v == H || v == I) {
+<<<<<<< HEAD
 			answerCurrent = ((Button) v).getText().toString();
 			new Thread(new Runnable() {
 
@@ -151,6 +172,11 @@ public class ClickerActivity extends Activity implements OnClickListener,
 					}
 				};
 			}).start();
+=======
+			String ans = ((Button) v).getText().toString();
+			// answer.setText(ans);
+			// user thread
+>>>>>>> origin/uclick1.1
 		}
 
 	}
@@ -198,8 +224,11 @@ public class ClickerActivity extends Activity implements OnClickListener,
 						question--;
 					ClickerActivity.qn = question;
 					qnumber.setText(Integer.toString(question));
+<<<<<<< HEAD
 					answer.setText("");
 					answerCurrent = null;
+=======
+>>>>>>> origin/uclick1.1
 				} else {
 
 					// ALERT MESSAGE
@@ -212,6 +241,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		};
 
 	}
+<<<<<<< HEAD
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
@@ -243,3 +273,6 @@ public class ClickerActivity extends Activity implements OnClickListener,
 
 	}
 }
+=======
+}
+>>>>>>> origin/uclick1.1

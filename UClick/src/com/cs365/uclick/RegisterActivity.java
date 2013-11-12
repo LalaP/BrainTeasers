@@ -1,18 +1,27 @@
 package com.cs365.uclick;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import org.apache.http.impl.conn.tsccm.WaitingThread;
+=======
+>>>>>>> origin/uclick1.1
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.text.Editable;
 import android.text.TextWatcher;
+=======
+>>>>>>> origin/uclick1.1
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> origin/uclick1.1
 
 public class RegisterActivity extends Activity implements OnClickListener {
 	private Button back, register, register2;
@@ -37,6 +46,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		register.setOnClickListener(this);
 		register2.setOnClickListener(this);
 
+<<<<<<< HEAD
 		email.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -109,6 +119,8 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			}
 		});
 
+=======
+>>>>>>> origin/uclick1.1
 	}
 
 	@Override
@@ -120,6 +132,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		}
 
 		if (v == register2 || v == register) {
+<<<<<<< HEAD
 			if (MyRegex.isValidEditText(fname.getText().toString())
 					&& MyRegex.isValidEditText(lname.getText().toString())
 					&& MyRegex.isEmailValid(email.getText().toString())
@@ -140,6 +153,20 @@ public class RegisterActivity extends Activity implements OnClickListener {
 							Toast.LENGTH_SHORT).show();
 				}
 
+=======
+			if (!fname.getText().toString().equals("")
+					&& !lname.getText().toString().equals("")
+					&& !email.getText().toString().equals("")
+					&& pass1.getText().toString()
+							.equals(pass2.getText().toString())) {
+
+				LoginActivity.usr.setFirstName(fname.getText().toString());
+				LoginActivity.usr.setLastName(lname.getText().toString());
+				LoginActivity.usr.setEmail(email.getText().toString());
+
+				Intent intent = new Intent(this, ProfileActivity.class);
+				startActivity(intent);
+>>>>>>> origin/uclick1.1
 			}
 
 		}
