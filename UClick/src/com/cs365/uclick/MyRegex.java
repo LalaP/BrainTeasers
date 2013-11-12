@@ -13,8 +13,6 @@ public class MyRegex {
 	private static final String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})";;
 
 	public static boolean isEmailValid(String email) {
-		if (email.length() == 0)
-			return false;
 
 		Pattern pattern = Pattern.compile(EMAIL_PATTERN,
 				Pattern.CASE_INSENSITIVE);

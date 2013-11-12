@@ -128,9 +128,9 @@ public class RegisterActivity extends Activity implements OnClickListener {
 
 				if ((pass1.getText().toString()).equals(pass2.getText()
 						.toString())) {
-					LoginActivity.usr.setFirstName(fname.getText().toString());
-					LoginActivity.usr.setLastName(lname.getText().toString());
-					LoginActivity.usr.setEmail(email.getText().toString());
+					MyData.usr.setFirstName(fname.getText().toString());
+					MyData.usr.setLastName(lname.getText().toString());
+					MyData.usr.setEmail(email.getText().toString());
 
 					Intent intent = new Intent(this, ProfileActivity.class);
 					startActivity(intent);

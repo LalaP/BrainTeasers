@@ -1,7 +1,5 @@
 package com.cs365.uclick;
 
-import java.util.Currency;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -29,6 +27,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	public static int qn = 1;
 	private String answerCurrent;
 	private boolean tag;
+	private TextView quizname;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +41,8 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		menu.setAdapter(adapter);
 		tag = false;
 
+		quizname = (TextView) this.findViewById(R.id.clik_qzname);
+		quizname.setText(MyData.quiz.getId());
 		menu.setOnItemSelectedListener(this);
 		qnumber = (TextView) this.findViewById(R.id.clik_qn);
 		qnumber.setText(Integer.toString(qn));
@@ -84,9 +85,10 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v == next) {
-			if (qn < ProfileActivity.quiz.getQuestions()) {
-				Toast.makeText(getBaseContext(),
-						Integer.toString(ProfileActivity.quiz.getQuestions()),
+			if (qn < MyData.quiz.getQuestions()) {
+				Toast.makeText(
+						getBaseContext(),
+						Integer.toString(MyData.quiz.getQuestions()),
 						Toast.LENGTH_SHORT).show();
 
 				new Thread(new myRunnable(true)).start();

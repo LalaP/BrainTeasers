@@ -8,6 +8,8 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -29,10 +31,10 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	private ExpandableListView quizHistory;
 	private EditText fname, email, pass1, pass2, quizname;
 	private Button edit, start;
+	private TextView usrname;
 	private List<String> quizList;
 	private List<String> detailList;
 	private Map<String, List<String>> quizCollections;
-	public static Quiz quiz = new Quiz("q1117", 10);
 	private boolean tag;
 
 	@Override
@@ -46,6 +48,9 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
 		tag = false;
+
+		usrname = (TextView) this.findViewById(R.id.pro_usrname);
+		usrname.setText(MyData.usr.getFirstName());
 
 		fname = (EditText) this.findViewById(R.id.pro_fname);
 		email = (EditText) this.findViewById(R.id.pro_email);
@@ -174,8 +179,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	}
 
 	private void loadDefaultValues() {
-		this.fname.setText(LoginActivity.usr.getFirstName());
-		this.email.setText(LoginActivity.usr.getEmail());
+		this.fname.setText(MyData.usr.getFirstName());
+		this.email.setText(MyData.usr.getEmail());
 	}
 
 	@Override
@@ -191,8 +196,52 @@ public class ProfileActivity extends Activity implements OnClickListener,
 
 				if ((pass1.getText().toString()).equals(pass2.getText()
 						.toString())) {
-					LoginActivity.usr.setFirstName(fname.getText().toString());
-					LoginActivity.usr.setEmail(email.getText().toString());
+					MyData.usr.setFirstName(fname.getText().toString());
+					MyData.usr.setEmail(email.getText().toString());
+					new Thread(new Runnable() {
+
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							threadMsg(MyData.usr.getFirstName());
+						}
+
+						private void threadMsg(String msg) {
+
+							if (!msg.equals(null) && !msg.equals("")) {
+								Message msgObj = handler.obtainMessage();
+								Bundle b = new Bundle();
+								b.putString("message", msg);
+								msgObj.setData(b);
+								handler.sendMessage(msgObj);
+							}
+						}
+
+						// Define the Handler that receives messages from the
+						// thread
+						// and update the progress
+						private final Handler handler = new Handler() {
+
+							public void handleMessage(Message msg) {
+
+								String aResponse = msg.getData().getString(
+										"message");
+
+								if ((null != aResponse)) {
+
+									// ALERT MESSAGE
+									usrname.setText(MyData.usr.getFirstName());
+								} else {
+
+									// ALERT MESSAGE
+									Toast.makeText(getBaseContext(),
+											"Not Got Response From Server.",
+											Toast.LENGTH_SHORT).show();
+								}
+
+							}
+						};
+					}).start();
 					Toast.makeText(this, "Information updated!",
 							Toast.LENGTH_SHORT).show();
 
@@ -206,8 +255,11 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		} else if (v == start) {
 			// check quiz id
 			// start quiz
-			Intent intent = new Intent(this, ClickerActivity.class);
-			startActivity(intent);
+			if (quizname.getText().toString().equals(MyData.quiz.getId())) {
+				Intent intent = new Intent(this, ClickerActivity.class);
+				startActivity(intent);
+			}
+
 		}
 
 	}

@@ -19,8 +19,6 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	private Button signup, signin, forgotpass;
 	private EditText email, pass;
-	public static User usr = new User("Alexis", "Lkhagvadorj",
-			"alexis@hotmail.com");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +104,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 		} else if (v == signin) {
 
-			if (this.email.getText().toString().equals(usr.getEmail())
+			if (this.email.getText().toString().equals(MyData.usr.getEmail())
 					&& this.pass.getText().toString().equals("tuya")) {
 				Intent intent = new Intent(this, ProfileActivity.class);
 				startActivity(intent);
