@@ -232,7 +232,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 			}
 
 		}
-		tag = false;
+		tag = true;
 	}
 
 	@Override

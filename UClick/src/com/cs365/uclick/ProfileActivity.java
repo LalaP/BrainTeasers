@@ -193,9 +193,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 						.toString())) {
 					LoginActivity.usr.setFirstName(fname.getText().toString());
 					LoginActivity.usr.setEmail(email.getText().toString());
-
-					Intent intent = new Intent(this, ProfileActivity.class);
-					startActivity(intent);
+					Toast.makeText(this, "Information updated!",
+							Toast.LENGTH_SHORT).show();
 
 				} else {
 					Toast.makeText(this, "Passwords don't match!",
