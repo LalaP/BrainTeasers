@@ -6,8 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -21,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ProfileActivity extends Activity implements OnClickListener,
 		OnItemSelectedListener {
@@ -28,22 +33,27 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	private ExpandableListView quizHistory;
 	private EditText fname, email, pass1, pass2, quizname;
 	private Button edit, start;
+	private TextView usrname;
 	private List<String> quizList;
 	private List<String> detailList;
 	private Map<String, List<String>> quizCollections;
-	public static Quiz quiz = new Quiz("q1117", 10);
 	private boolean tag;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.profile);
-		tag = false;
+		
+
 		this.menu = (Spinner) this.findViewById(R.id.mainmenu);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+		tag = false;
+
+		usrname = (TextView) this.findViewById(R.id.pro_usrname);
+		usrname.setText(MyData.usr.getFirstName());
 
 		fname = (EditText) this.findViewById(R.id.pro_fname);
 		email = (EditText) this.findViewById(R.id.pro_email);
@@ -85,7 +95,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+				if (!MyRegex.isEmailValid(s.toString()))
+					email.setError("InValid Email");
 			}
 		});
 
@@ -108,7 +119,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+				if (!MyRegex.isValidPassword(s.toString()))
+					pass1.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
 			}
 		});
 
@@ -131,7 +143,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+				if (!MyRegex.isValidPassword(s.toString()))
+					pass2.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
 			}
 		});
 
@@ -169,8 +182,8 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	}
 
 	private void loadDefaultValues() {
-		this.fname.setText(LoginActivity.usr.getFirstName());
-		this.email.setText(LoginActivity.usr.getEmail());
+		this.fname.setText(MyData.usr.getFirstName());
+		this.email.setText(MyData.usr.getEmail());
 	}
 
 	@Override
@@ -179,12 +192,129 @@ public class ProfileActivity extends Activity implements OnClickListener,
 		if (v == edit) {
 			// update data
 			// show dialog box
+			final Intent intent = new Intent(this, LoginActivity.class);
+
+			final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+			dialog.setTitle("Edit");
+			dialog.setMessage("Are you sure you want save changes?");
+
+			dialog.setIcon(R.drawable.ic_launcher);
+
+			dialog.setPositiveButton("Yes",
+					new DialogInterface.OnClickListener() {
+
+						public void onClick(DialogInterface dialog, int which) {
+							dialog.dismiss();
+							
+						}
+					});
+			dialog.setNegativeButton("No",
+					new DialogInterface.OnClickListener() {
+
+						public void onClick(DialogInterface dialog, int which) {
+							dialog.dismiss();
+							
+							
+						}
+					});
+
+			dialog.show();
+
+				if (MyRegex.isValidEditText(fname.getText().toString())
+						&& MyRegex.isEmailValid(email.getText().toString())
+						&& MyRegex.isValidPassword(pass1.getText().toString())
+						&& MyRegex.isValidPassword(pass2.getText().toString())) {
+
+					if ((pass1.getText().toString()).equals(pass2.getText()
+							.toString())) {
+						MyData.usr.setFirstName(fname.getText().toString());
+						MyData.usr.setEmail(email.getText().toString());
+						new Thread(new Runnable() {
+
+							@Override
+							public void run() {
+								// TODO Auto-generated method stub
+								threadMsg(MyData.usr.getFirstName());
+							}
+
+							private void threadMsg(String msg) {
+
+								if (!msg.equals(null) && !msg.equals("")) {
+									Message msgObj = handler.obtainMessage();
+									Bundle b = new Bundle();
+									b.putString("message", msg);
+									msgObj.setData(b);
+									handler.sendMessage(msgObj);
+								}
+							}
+
+							// Define the Handler that receives messages from the
+							// thread
+							// and update the progress
+							private final Handler handler = new Handler() {
+
+								public void handleMessage(Message msg) {
+
+									String aResponse = msg.getData().getString(
+											"message");
+
+									if ((null != aResponse)) {
+
+										// ALERT MESSAGE
+										usrname.setText(MyData.usr.getFirstName());
+									} else {
+
+										// ALERT MESSAGE
+										Toast.makeText(getBaseContext(),
+												"Not Got Response From Server.",
+												Toast.LENGTH_SHORT).show();
+									}
+
+								}
+							};
+						}).start();
+						
+						Toast.makeText(this, "Information updated!",
+								Toast.LENGTH_SHORT).show();
+
+					} else {
+						Toast.makeText(this, "Passwords don't match!",
+								Toast.LENGTH_SHORT).show();
+					}
+
+				}
+			
+			
 
 		} else if (v == start) {
 			// check quiz id
 			// start quiz
-			Intent intent = new Intent(this, ClickerActivity.class);
-			startActivity(intent);
+			if (quizname.getText().toString().equals(MyData.quiz.getId())) {
+				Intent intent = new Intent(this, ClickerActivity.class);
+				startActivity(intent);
+			}
+			else{
+
+				AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+				dialog.setTitle("ERROR");
+				dialog.setMessage("Enter a valid Quiz ID");
+
+				dialog.setIcon(R.drawable.ic_launcher);
+
+				dialog.setNeutralButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+								dialog.dismiss();
+								
+							}
+						});
+
+				dialog.show();
+			}
+
 		}
 
 	}
@@ -192,17 +322,41 @@ public class ProfileActivity extends Activity implements OnClickListener,
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
-		// TODO Auto-generated method stub
+		String menuItem = ((TextView) view).getText().toString();
 		if (tag) {
-			TextView v = (TextView) view;
-			if (v.getText().equals("YOUR HISTORY")) {
+			if (menuItem.equalsIgnoreCase("your history")) {
 				Intent intent = new Intent(this, HistoryActivity.class);
 				startActivity(intent);
+			} else if (menuItem.equalsIgnoreCase("sign out")) {
+				final Intent intent = new Intent(this, LoginActivity.class);
 
-			} else if (v.getText().equals("SIGN OUT")) {
-				Intent intent = new Intent(this, LoginActivity.class);
-				startActivity(intent);
+				AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+				dialog.setTitle("Log Out");
+				dialog.setMessage("Are you sure you want to log out?");
+
+				dialog.setIcon(R.drawable.ic_launcher);
+
+				dialog.setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+								startActivity(intent);
+							}
+						});
+				dialog.setNegativeButton("No",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+								dialog.dismiss();
+								
+								
+							}
+						});
+
+				dialog.show();
 			}
+
 		}
 		tag = true;
 

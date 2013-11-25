@@ -1,6 +1,7 @@
 package com.cs365.uclick;
 
 import java.util.ArrayList;
+import org.apache.http.impl.conn.tsccm.WaitingThread;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -55,7 +56,8 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+				if (!MyRegex.isEmailValid(s.toString()))
+					email.setError("InValid Email");
 			}
 		});
 
@@ -78,7 +80,8 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+				if (!MyRegex.isValidPassword(s.toString()))
+					pass1.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
 			}
 		});
 
@@ -101,7 +104,8 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+				if (!MyRegex.isValidPassword(s.toString()))
+					pass2.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
 			}
 		});
 
@@ -116,39 +120,26 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		}
 
 		if (v == register2 || v == register) {
+			if (MyRegex.isValidEditText(fname.getText().toString())
+					&& MyRegex.isValidEditText(lname.getText().toString())
+					&& MyRegex.isEmailValid(email.getText().toString())
+					&& MyRegex.isValidPassword(pass1.getText().toString())
+					&& MyRegex.isValidPassword(pass2.getText().toString())) {
 
-			if(fname.getText().toString().equals("")){
-				Toast.makeText(this, "Enter your fisrt name", Toast.LENGTH_SHORT)
-				.show();
-			}
-			if(lname.getText().toString().equals("")){
-				Toast.makeText(this, "Enter your last name", Toast.LENGTH_SHORT)
-				.show();
-			}
-			if(email.getText().toString().equals("") || !(email.getText().toString().contains("@"))){
-				Toast.makeText(this, "Enter a valid email", Toast.LENGTH_SHORT)
-				.show();
-			}
-			if(pass1.getText().toString().length() < 6 ){
-				Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT)
-				.show();
-			}
-			if(!(pass1.getText().toString().equals(pass2.getText().toString()))){
-				Toast.makeText(this, "password doesn't match", Toast.LENGTH_SHORT)
-				.show();
-			}
-			if (!fname.getText().toString().equals("")
-					&& !lname.getText().toString().equals("")
-					&& !email.getText().toString().equals("")
-					&& pass1.getText().toString()
-							.equals(pass2.getText().toString())) {
+				if ((pass1.getText().toString()).equals(pass2.getText()
+						.toString())) {
+					MyData.usr.setFirstName(fname.getText().toString());
+					MyData.usr.setLastName(lname.getText().toString());
+					MyData.usr.setEmail(email.getText().toString());
 
-				LoginActivity.usr.setFirstName(fname.getText().toString());
-				LoginActivity.usr.setLastName(lname.getText().toString());
-				LoginActivity.usr.setEmail(email.getText().toString());
+					Intent intent = new Intent(this, ProfileActivity.class);
+					startActivity(intent);
 
-				Intent intent = new Intent(this, ProfileActivity.class);
-				startActivity(intent);
+				} else {
+					Toast.makeText(this, "Passwords don't match!",
+							Toast.LENGTH_SHORT).show();
+				}
+
 			}
 
 		}

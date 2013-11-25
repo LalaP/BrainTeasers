@@ -1,6 +1,8 @@
 package com.cs365.uclick;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class PasswordActivity extends Activity implements OnClickListener {
 	private EditText email;
@@ -48,6 +51,8 @@ public class PasswordActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
+				if (!MyRegex.isEmailValid(s.toString()))
+					email.setError("Invalid Email");
 
 			}
 		});
@@ -62,9 +67,31 @@ public class PasswordActivity extends Activity implements OnClickListener {
 		}
 
 		else if (v == send1 || v == send2) {
-			// dialog box
-			Intent intent = new Intent(this, LoginActivity.class);
-			startActivity(intent);
+			// send password to email
+
+			if (MyRegex.isEmailValid(email.getText().toString())) {
+
+				AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(this);
+
+				alertDialog1.setTitle("Alert Dialog");
+
+				alertDialog1.setMessage("Password sent to email");
+
+				alertDialog1.setIcon(R.drawable.ic_launcher);
+
+				alertDialog1.setNeutralButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog,
+									int which) {
+
+							}
+						});
+
+				alertDialog1.show();
+
+			}
+
 		}
 
 	}

@@ -2,6 +2,10 @@ package com.cs365.uclick;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
+import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,8 +28,10 @@ public class ClickerActivity extends Activity implements OnClickListener,
 			I;
 	private TextView qnumber;
 	private Spinner menu;
-	private int selectionCurrent;
 	public static int qn = 1;
+	private String answerCurrent;
+	private boolean tag;
+	private TextView quizname;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +43,11 @@ public class ClickerActivity extends Activity implements OnClickListener,
 				this, R.array.Menu, R.layout.spinnerstyle);
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
+		tag = false;
 
+		quizname = (TextView) this.findViewById(R.id.clik_qzname);
+		quizname.setText(MyData.quiz.getId());
 		menu.setOnItemSelectedListener(this);
-		selectionCurrent = menu.getSelectedItemPosition();
-
 		qnumber = (TextView) this.findViewById(R.id.clik_qn);
 		qnumber.setText(Integer.toString(qn));
 
@@ -82,9 +89,9 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v == next) {
-			if (qn < ProfileActivity.quiz.getQuestions()) {
+			if (qn < MyData.quiz.getQuestions()) {
 				Toast.makeText(getBaseContext(),
-						Integer.toString(ProfileActivity.quiz.getQuestions()),
+						Integer.toString(MyData.quiz.getQuestions()),
 						Toast.LENGTH_SHORT).show();
 
 				new Thread(new myRunnable(true)).start();
@@ -103,13 +110,68 @@ public class ClickerActivity extends Activity implements OnClickListener,
 			// show quiz result
 			// update database
 			// goto profile.xml
-			Intent intent = new Intent(this, ProfileActivity.class);
-			startActivity(intent);
+
+			final Intent intent = new Intent(this, ProfileActivity.class);
+
+			AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(this);
+
+			alertDialog1.setTitle("Quiz Results");
+			alertDialog1.setMessage("Results: ");
+
+			alertDialog1.setIcon(R.drawable.ic_launcher);
+
+			alertDialog1.setNeutralButton("OK",
+					new DialogInterface.OnClickListener() {
+
+						public void onClick(DialogInterface dialog, int which) {
+							startActivity(intent);
+						}
+					});
+
+			alertDialog1.show();
+
 		} else if (v == A || v == B || v == C || v == D || v == E || v == F
 				|| v == G || v == H || v == I) {
-			String ans = ((Button) v).getText().toString();
-			// answer.setText(ans);
-			// user thread
+			answerCurrent = ((Button) v).getText().toString();
+			new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					threadMsg(answerCurrent);
+				}
+
+				private void threadMsg(String msg) {
+					// TODO Auto-generated method stub
+					if (!msg.equals(null) && !msg.equals("")) {
+						Message msgObj = handler.obtainMessage();
+						Bundle b = new Bundle();
+						b.putString("message", msg);
+						msgObj.setData(b);
+						handler.sendMessage(msgObj);
+					}
+
+				}
+
+				private final Handler handler = new Handler() {
+
+					public void handleMessage(Message msg) {
+
+						String aResponse = msg.getData().getString("message");
+
+						if ((null != aResponse)) {
+							answer.setText(answerCurrent);
+						} else {
+
+							// ALERT MESSAGE
+							Toast.makeText(getBaseContext(),
+									"Not Got Response From Server.",
+									Toast.LENGTH_SHORT).show();
+						}
+
+					}
+				};
+			}).start();
 		}
 
 	}
@@ -157,6 +219,8 @@ public class ClickerActivity extends Activity implements OnClickListener,
 						question--;
 					ClickerActivity.qn = question;
 					qnumber.setText(Integer.toString(question));
+					answer.setText("");
+					answerCurrent = null;
 				} else {
 
 					// ALERT MESSAGE
@@ -176,9 +240,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		// TODO Auto-generated method stub
 		TextView v = (TextView) view;
 
-		if (selectionCurrent != pos) {
-			System.out.println(v.getText().toString());
-
+		if (tag) {
 			if (v.getText().equals("YOUR ACCOUNT")) {
 				Intent intent = new Intent(this, ProfileActivity.class);
 				startActivity(intent);
@@ -188,12 +250,41 @@ public class ClickerActivity extends Activity implements OnClickListener,
 				startActivity(intent);
 
 			} else if (v.getText().equals("SIGN OUT")) {
-				Intent intent = new Intent(this, LoginActivity.class);
-				startActivity(intent);
-			}
-		}
-		selectionCurrent = pos;
+				final Intent intent = new Intent(this, LoginActivity.class);
+				final Intent cancel = new Intent(this, ClickerActivity.class);
 
+				AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+				dialog.setTitle("Log Out");
+				dialog.setMessage("Are you sure you want to log out?");
+
+				dialog.setIcon(R.drawable.ic_launcher);
+
+				dialog.setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+								startActivity(intent);
+							}
+						});
+				dialog.setNegativeButton("No",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+//this isnt working, only works the first time but if you try to log out again the dialog doesnt show up
+//								dialog.dismiss();
+								//so i added this even though i dont really like it.
+								startActivity(cancel);
+								
+								
+							}
+						});
+
+				dialog.show();
+			}
+
+		}
+		tag = true;
 	}
 
 	@Override

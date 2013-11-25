@@ -19,8 +19,6 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	private Button signup, signin, forgotpass;
 	private EditText email, pass;
-	public static User usr = new User("Alexis", "Lkhagvadorj",
-			"alexis@hotmail.com");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +51,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-
+//				if (!MyRegex.isEmailValid(s.toString())) {
+//					email.setError("Invalid Email Format");
+//				}
 			}
 		});
 		pass.addTextChangedListener(new TextWatcher() {
@@ -75,6 +75,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
+//				if (!MyRegex.isValidPassword(s.toString())) {
+//					pass.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
+//				}
 
 			}
 		});
@@ -100,29 +103,19 @@ public class LoginActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 
 		} else if (v == signin) {
-			if(!(this.email.getText().toString().contains("@"))){
-				Toast.makeText(this, "Wrong email format", Toast.LENGTH_SHORT)
-				.show();
-			}
-			if(this.pass.getText().toString().length() < 6){
-				Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT)
-				.show();
-			}
-			
-			if (this.email.getText().toString().equals(usr.getEmail())
+
+			if (this.email.getText().toString().equals(MyData.usr.getEmail())
 					&& this.pass.getText().toString().equals("tuya")) {
 				Intent intent = new Intent(this, ProfileActivity.class);
 				startActivity(intent);
 			} else {
-				Toast.makeText(this, "Password and email don't match", Toast.LENGTH_SHORT)
-						.show();
-			}
+				if (MyRegex.isEmailValid(email.getText().toString())
+						&& MyRegex.isValidPassword(pass.getText().toString())) {
+					Toast.makeText(this, "Wrong Email or Password!",
+							Toast.LENGTH_SHORT).show();
+				}
 
-			if (this.email.getText().toString().equals(usr.getEmail())
-					&& this.pass.getText().toString().equals("tuya")) {
-				Intent intent = new Intent(this, ProfileActivity.class);
-				startActivity(intent);
-			} 
+			}
 		} else if (v == forgotpass) {
 			Intent intent = new Intent(this, PasswordActivity.class);
 			startActivity(intent);
