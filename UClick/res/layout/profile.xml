@@ -19,13 +19,26 @@
             android:background="@drawable/menu_bg"
             android:orientation="horizontal" >
 
+            <TextView
+                android:id="@+id/pro_usrname"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.42"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
             <Spinner
                 android:id="@+id/mainmenu"
-                android:layout_width="100dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="230dp"
-                android:layout_weight="0"
-                android:entries="@array/Menu" />
+                android:layout_width="133dp"
+                android:layout_height="match_parent"
+                android:entries="@array/Menu"
+                android:prompt="@string/action_settings"
+                 />
         </LinearLayout>
 
         <LinearLayout

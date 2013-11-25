@@ -27,7 +27,6 @@
     <dimen name="dropsize">10dp</dimen>
     <dimen name="anssize">20dp</dimen>
     <color name="barcolor">#000000</color>
-    <color name="barbg">#ABABAB</color>
-    
+    <color name="barbg">#ABABAB</color> 
 
 </resources>

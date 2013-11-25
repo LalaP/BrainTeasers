@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
 
     <string name="app_name">UClick</string>
     <string name="action_settings">Settings</string>
-    <string-array name="Menu">
+    <string-array name="Menu" >
         <item>YOUR ACCOUNT</item>
         <item>YOUR HISTORY</item>
         <item>SIGN OUT</item>
     </string-array>
-    <string name="quiz_list">Quizes</string>
+    <string name="quiz_list">Quizzes</string>
 
 </resources>

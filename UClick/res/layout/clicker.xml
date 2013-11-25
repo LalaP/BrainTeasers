@@ -24,9 +24,8 @@
 
         <Spinner
             android:id="@+id/mainmenu"
-            android:layout_width="125dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:entries="@array/Menu" />
 
     </LinearLayout>
