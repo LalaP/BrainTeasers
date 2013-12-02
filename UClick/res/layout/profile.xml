@@ -8,93 +8,89 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1280dp"
         android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="fill_parent"
             android:layout_height="35dp"
-            android:layout_marginTop="0dp"
             android:background="@drawable/menu_bg"
             android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/pro_usrname"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="0.42"
-                android:text="Medium Text"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:typeface="serif" />
-
-            <Spinner
-                android:id="@+id/mainmenu"
-                android:layout_width="133dp"
-                android:layout_height="match_parent"
-                android:entries="@array/Menu"
-                android:prompt="@string/action_settings"
-                 />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="35dp"
-            android:background="@color/btn"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/clik_qzname"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:text="EDIT SETTINGS"
+                android:layout_weight="0.6"
+                android:text="My Account"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/txtcolor1"
-                android:textSize="@dimen/txtsize"
-                android:textStyle="bold"
-                android:typeface="serif" />
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/mainmenu"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:entries="@array/Menu" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="228dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/reg_bg"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" >
+                android:layout_height="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/lay_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="MY INFORMATION"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/txtcolor1"
+                    android:textSize="@dimen/txtsize"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
 
                 <TextView
                     android:id="@+id/q_date"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="40dp"
-                    android:text="Name:"
+                    android:text="First Name:"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="@dimen/txtsize"
+                    android:textColor="@color/txt"
+                    android:textSize="@dimen/btntxtsize"
                     android:textStyle="bold"
                     android:typeface="serif" />
 
-                <EditText
+                <TextView
                     android:id="@+id/pro_fname"
                     android:layout_width="150dp"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:singleLine="true"
-                    android:textSize="@dimen/txtsize" />
+                    android:text="Alexis" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -107,23 +103,21 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:text="Email:"
+                    android:text="Last Name:"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="@dimen/txtsize"
+                    android:textColor="@color/txt"
+                    android:textSize="@dimen/btntxtsize"
                     android:textStyle="bold"
                     android:typeface="serif" />
 
-                <EditText
-                    android:id="@+id/pro_email"
+                <TextView
+                    android:id="@+id/pro_lname"
                     android:layout_width="150dp"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:singleLine="true"
-                    android:textSize="@dimen/txtsize" />
+                    android:text="Lkhagvadorj" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -136,23 +130,21 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:text="Password:"
+                    android:text="Email:"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="@dimen/txtsize"
+                    android:textColor="@color/txt"
+                    android:textSize="@dimen/btntxtsize"
                     android:textStyle="bold"
                     android:typeface="serif" />
 
-                <EditText
-                    android:id="@+id/pro_pass1"
+                <TextView
+                    android:id="@+id/pro_email"
                     android:layout_width="150dp"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="40dp"
-                    android:layout_weight="0"
-                    android:ems="10"
-                    android:inputType="textPassword"
-                    android:singleLine="true"
-                    android:textSize="@dimen/txtsize" />
+                    android:text="alexis@hotmail.com" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -165,101 +157,30 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:text="Password*:"
+                    android:text="Student ID:"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="@dimen/txtsize"
+                    android:textColor="@color/txt"
+                    android:textSize="@dimen/btntxtsize"
                     android:textStyle="bold"
                     android:typeface="serif" />
 
-                <EditText
-                    android:id="@+id/pro_pass2"
+                <TextView
+                    android:id="@+id/pro_sid"
                     android:layout_width="150dp"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPassword"
-                    android:singleLine="true"
-                    android:textSize="@dimen/txtsize" />
+                    android:text="009284067" />
+
             </LinearLayout>
-
-            <Button
-                android:id="@+id/probtn_edit"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/btn_small"
-                android:text="Save Changes"
-                android:textColor="@color/txtcolor1"
-                android:textSize="@dimen/btntxtsize"
-                android:typeface="serif" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/btn"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/TextView01"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="NEW QUIZ "
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/txtcolor1"
-                android:textSize="@dimen/txtsize"
-                android:textStyle="bold"
-                android:typeface="serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="0.96" >
-
-            <EditText
-                android:id="@+id/pro_qname"
-                android:layout_width="120dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Quiz Number"
-                android:textSize="@dimen/txtsize" />
-
-            <Button
-                android:id="@+id/probtn_start"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="50dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_small"
-                android:text="START"
-                android:textColor="@color/txtcolor1"
-                android:textSize="@dimen/btntxtsize"
-                android:typeface="serif" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
-            android:background="@color/btn"
+            android:background="@drawable/lay_bg"
             android:orientation="vertical" >
 
             <TextView
@@ -284,7 +205,7 @@
             <ExpandableListView
                 android:id="@+id/pro_qzlist"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"

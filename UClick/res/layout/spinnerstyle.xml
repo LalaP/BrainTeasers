@@ -1,9 +1,11 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/text1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textColor="#F7943D"
-    android:textSize="20sp"
-    android:text = "@string/action_settings"
-     />
+    android:layout_height="35dp"
+    android:layout_marginLeft="5dp"
+    android:textColor="@color/barcolor"
+    android:textColorLink="@color/barbg"
+    android:textSize="@dimen/btntxtsize"
+    android:textStyle="bold"
+    android:typeface="monospace" />
 

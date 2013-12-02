@@ -16,16 +16,19 @@
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_weight="0.7"
             android:text="###"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/barcolor"
             android:textSize="16dp"
-            android:typeface="monospace" />
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/mainmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="0.3"
             android:entries="@array/Menu" />
 
     </LinearLayout>
@@ -36,29 +39,17 @@
         android:layout_height="35dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="35dp"
-        android:background="@color/btn"
+        android:background="@drawable/lay_bg"
         android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/clikbtn_pre"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="45dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/btn_small"
-            android:text="PRE"
-            android:textColor="@color/txtcolor1"
-            android:textSize="@dimen/btntxtsize"
-            android:typeface="serif" />
 
         <TextView
             android:id="@+id/clik_q"
             android:layout_width="80dp"
             android:layout_height="25dp"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
+            android:layout_weight="0.2"
             android:text="Question: "
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/txtcolor1"
@@ -71,8 +62,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
+            android:layout_weight="0.2"
             android:text="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/txtcolor1"
@@ -85,8 +77,10 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="45dp"
             android:layout_height="25dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
+            android:layout_weight="0.3"
             android:background="@drawable/btn_small"
             android:text="NEXT"
             android:textColor="@color/txtcolor1"
@@ -113,7 +107,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/clik_ans"
-        android:layout_centerHorizontal="true" >
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" >
 
         <Button
             android:id="@+id/clikbtn_a"
@@ -122,7 +117,7 @@
             android:layout_height="70dp"
             android:background="@drawable/btn_round"
             android:text="A"
-            android:textColor="@color/txtcolor1"
+            android:textColor="@color/txt"
             android:textColorHint="@color/txtcolor1"
             android:textSize="@dimen/anssize"
             android:textStyle="bold"
@@ -137,7 +132,7 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/btn_round"
             android:text="B"
-            android:textColor="@color/txtcolor1"
+            android:textColor="@color/txt"
             android:textSize="@dimen/anssize"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -149,7 +144,7 @@
             android:layout_height="70dp"
             android:background="@drawable/btn_round"
             android:text="C"
-            android:textColor="@color/txtcolor1"
+            android:textColor="@color/txt"
             android:textSize="20dp"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -170,7 +165,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_round"
             android:text="D"
-            android:textColor="@color/txtcolor1"
+            android:textColor="@color/txt"
             android:textSize="@dimen/anssize"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -185,7 +180,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_round"
             android:text="E"
-            android:textColor="@color/txtcolor1"
+            android:textColor="@color/txt"
             android:textSize="@dimen/anssize"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -198,56 +193,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_round"
             android:text="F"
-            android:textColor="@color/txtcolor1"
-            android:textSize="@dimen/anssize"
-            android:textStyle="bold"
-            android:typeface="serif" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ansLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ansLayout2"
-        android:layout_below="@+id/ansLayout2" >
-
-        <Button
-            android:id="@+id/clikbtn_g"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_round"
-            android:text="G"
-            android:textColor="@color/txtcolor1"
-            android:textSize="@dimen/anssize"
-            android:textStyle="bold"
-            android:typeface="serif" />
-
-        <Button
-            android:id="@+id/clikbtn_h"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_round"
-            android:text="H"
-            android:textColor="@color/txtcolor1"
-            android:textSize="@dimen/anssize"
-            android:textStyle="bold"
-            android:typeface="serif" />
-
-        <Button
-            android:id="@+id/clikbtn_i"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_round"
-            android:text="I"
-            android:textColor="@color/txtcolor1"
+            android:textColor="@color/txt"
             android:textSize="@dimen/anssize"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -277,7 +223,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="80dp"
             android:layout_height="35dp"
-            android:layout_weight="0.47"
+            android:layout_weight="0.5"
             android:background="@drawable/button_small"
             android:text="Submit"
             android:textColor="@color/txtcolor1"

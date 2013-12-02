@@ -14,6 +14,9 @@
                 android:id="@+id/hist"
                 android:title="Your History"/>
             <item
+                android:id="@+id/edit"
+                android:title="Edit Account"/>
+            <item
                 android:id="@+id/signout"
                 android:title="Sign Out"/>
         </menu>

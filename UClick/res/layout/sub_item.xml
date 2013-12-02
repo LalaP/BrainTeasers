@@ -10,6 +10,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="30dp"
         android:text="DD/MM/YY"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/txt" />
 
 </LinearLayout>

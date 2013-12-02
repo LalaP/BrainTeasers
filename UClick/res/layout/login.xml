@@ -43,13 +43,23 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical" >
 
+        <RadioButton
+            android:id="@+id/rbtn_rem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:text="Remember Me"
+            android:textColor="@color/txt"
+            android:textSize="@dimen/txtsize" />
+
         <Button
             android:id="@+id/logbtn_log"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="200dp"
             android:layout_height="30dp"
             android:layout_marginBottom="3dp"
-            android:background="@drawable/button1"
+            android:background="@drawable/btn_small"
             android:fadingEdge="horizontal|vertical"
             android:focusableInTouchMode="true"
             android:gravity="center_vertical|center_horizontal|top|bottom"
@@ -66,7 +76,7 @@
             android:layout_height="30dp"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/button1"
+            android:background="@drawable/btn_small"
             android:text="Sign Up"
             android:textAlignment="center"
             android:textColor="@color/txtcolor1"
@@ -79,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:background="@drawable/button1"
+            android:background="@drawable/btn_small"
             android:gravity="center_vertical|center_horizontal|bottom|fill_vertical"
             android:text="Forgot Password?"
             android:textAlignment="center"

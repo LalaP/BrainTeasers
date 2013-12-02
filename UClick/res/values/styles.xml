@@ -17,16 +17,18 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <color name="btn">#6B74D7</color>
-    <color name="txt">#ff33b5e5</color>
+    <color name="btn">#F3BA53</color>
+    <color name="txt">#038A93</color>
     <color name="bgcolor">#F3F3F3</color>
     <color name="txtcolor1">#FFFFFF</color>
 
     <dimen name="txtsize">14dp</dimen>
     <dimen name="btntxtsize">12dp</dimen>
-    <dimen name="dropsize">10dp</dimen>
+    <dimen name="dropsize">14dp</dimen>
     <dimen name="anssize">20dp</dimen>
     <color name="barcolor">#000000</color>
-    <color name="barbg">#ABABAB</color> 
+    <color name="barbg">#ABABAB</color>
+    <dimen name="lay_size">30dp</dimen>
+    
 
 </resources>

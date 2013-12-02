@@ -1,11 +1,14 @@
 package com.cs365.uclick;
 
-import java.util.ArrayList;
-import org.apache.http.impl.conn.tsccm.WaitingThread;
+import com.cs365.uclick.data.User;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.os.ParcelableCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -16,7 +19,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends Activity implements OnClickListener {
 	private Button back, register, register2;
-	private EditText fname, lname, email, pass1, pass2;
+	private EditText fname, lname, email, sid, pass1, pass2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		this.fname = (EditText) this.findViewById(R.id.reg_fname);
 		this.lname = (EditText) this.findViewById(R.id.reg_lname);
 		this.email = (EditText) this.findViewById(R.id.reg_email);
+		this.sid = (EditText) this.findViewById(R.id.reg_sid);
 		this.pass1 = (EditText) this.findViewById(R.id.reg_pass1);
 		this.pass2 = (EditText) this.findViewById(R.id.reg_pass2);
 
@@ -57,7 +61,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				if (!MyRegex.isEmailValid(s.toString()))
-					email.setError("InValid Email");
+					email.setError("");
 			}
 		});
 
@@ -81,7 +85,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				if (!MyRegex.isValidPassword(s.toString()))
-					pass1.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
+					pass1.setError("");
 			}
 		});
 
@@ -105,7 +109,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				if (!MyRegex.isValidPassword(s.toString()))
-					pass2.setError("Must contain [0-9], [A-Z], [a-z], 6<length<20");
+					pass2.setError("");
 			}
 		});
 
@@ -120,22 +124,50 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		}
 
 		if (v == register2 || v == register) {
-			if (MyRegex.isValidEditText(fname.getText().toString())
-					&& MyRegex.isValidEditText(lname.getText().toString())
-					&& MyRegex.isEmailValid(email.getText().toString())
-					&& MyRegex.isValidPassword(pass1.getText().toString())
-					&& MyRegex.isValidPassword(pass2.getText().toString())) {
+			final String sfname = fname.getText().toString();
+			final String slname = lname.getText().toString();
+			final String semail = email.getText().toString();
+			final String ssid = sid.getText().toString();
+			final String spass1 = pass1.getText().toString();
+			String spass2 = pass2.getText().toString();
+			if (MyRegex.isValidEditText(sfname)
+					&& MyRegex.isValidEditText(slname)
+					&& MyRegex.isEmailValid(semail)
+					&& MyRegex.isValidEditText(ssid)
+					&& MyRegex.isValidPassword(spass1)
+					&& MyRegex.isValidPassword(spass2)) {
 
-				if ((pass1.getText().toString()).equals(pass2.getText()
-						.toString())) {
-					MyData.usr.setFirstName(fname.getText().toString());
-					MyData.usr.setLastName(lname.getText().toString());
-					MyData.usr.setEmail(email.getText().toString());
+				if (spass1.equals(spass2)) {
 
-					Intent intent = new Intent(this, ProfileActivity.class);
-					startActivity(intent);
+					final Intent intent = new Intent(this,
+							ProfileActivity.class);
+
+					ParseUser user = new ParseUser();
+					user.put(MyData.USR_FIRST_NAME, sfname);
+					user.put(MyData.USR_LAST_NAME, slname);
+					user.put(MyData.USR_ID, ssid);
+					user.setUsername(semail);
+					user.setPassword(spass1);
+
+					user.signUpInBackground(new SignUpCallback() {
+
+						@Override
+						public void done(ParseException e) {
+							// TODO Auto-generated method stub
+							if (e == null) {
+								MyData.usr = new User(sfname, slname, semail,
+										ssid, spass1);
+								startActivity(intent);
+							} else {
+								email.setText("");
+							}
+
+						}
+					});
 
 				} else {
+					pass1.setText("");
+					pass2.setText("");
 					Toast.makeText(this, "Passwords don't match!",
 							Toast.LENGTH_SHORT).show();
 				}

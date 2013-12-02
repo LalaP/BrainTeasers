@@ -1,5 +1,10 @@
 package com.cs365.uclick;
 
+import java.util.ArrayList;
+import java.util.Currency;
+
+import com.parse.ParseUser;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -24,14 +30,14 @@ import android.widget.Toast;
 public class ClickerActivity extends Activity implements OnClickListener,
 		OnItemSelectedListener {
 
-	private Button pre, next, cancel, submit, answer, A, B, C, D, E, F, G, H,
-			I;
+	private Button next, cancel, submit, answer, A, B, C, D, E, F;
 	private TextView qnumber;
 	private Spinner menu;
-	public static int qn = 1;
+	public static int qn;
 	private String answerCurrent;
 	private boolean tag;
 	private TextView quizname;
+	private ArrayList<String> answers;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +50,17 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		adapter.setDropDownViewResource(R.layout.dropdown);
 		menu.setAdapter(adapter);
 		tag = false;
-
+		answerCurrent = "";
+		qn = 1;
+		answers = new ArrayList<String>(MyData.quiz.getQuestions());
+		for (int i = 0; i < MyData.quiz.getQuestions(); i++)
+			answers.add("");
 		quizname = (TextView) this.findViewById(R.id.clik_qzname);
 		quizname.setText(MyData.quiz.getId());
 		menu.setOnItemSelectedListener(this);
 		qnumber = (TextView) this.findViewById(R.id.clik_qn);
 		qnumber.setText(Integer.toString(qn));
 
-		pre = (Button) this.findViewById(R.id.clikbtn_pre);
 		next = (Button) this.findViewById(R.id.clikbtn_next);
 		cancel = (Button) this.findViewById(R.id.clikbtn_cancel);
 		submit = (Button) this.findViewById(R.id.clikbtn_submit);
@@ -64,11 +73,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		D = (Button) this.findViewById(R.id.clikbtn_d);
 		E = (Button) this.findViewById(R.id.clikbtn_e);
 		F = (Button) this.findViewById(R.id.clikbtn_f);
-		G = (Button) this.findViewById(R.id.clikbtn_g);
-		H = (Button) this.findViewById(R.id.clikbtn_h);
-		I = (Button) this.findViewById(R.id.clikbtn_i);
 
-		pre.setOnClickListener(this);
 		next.setOnClickListener(this);
 		cancel.setOnClickListener(this);
 		submit.setOnClickListener(this);
@@ -79,9 +84,6 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		D.setOnClickListener(this);
 		E.setOnClickListener(this);
 		F.setOnClickListener(this);
-		G.setOnClickListener(this);
-		H.setOnClickListener(this);
-		I.setOnClickListener(this);
 
 	}
 
@@ -89,34 +91,37 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v == next) {
-			if (qn < MyData.quiz.getQuestions()) {
-				Toast.makeText(getBaseContext(),
-						Integer.toString(MyData.quiz.getQuestions()),
-						Toast.LENGTH_SHORT).show();
 
+			if (qn < MyData.quiz.getQuestions()) {
 				new Thread(new myRunnable(true)).start();
 			}
 
-		} else if (v == pre) {
-			if (qn > 1) {
-				new Thread(new myRunnable(false)).start();
-
-			}
-
-		} else if (v == cancel) {
+		} /*
+		 * else if (v == pre) { if (qn > 1) { new Thread(new
+		 * myRunnable(false)).start();
+		 * 
+		 * }
+		 * 
+		 * }
+		 */else if (v == cancel) {
 			Intent intent = new Intent(this, ProfileActivity.class);
 			startActivity(intent);
 		} else if (v == submit) {
 			// show quiz result
 			// update database
 			// goto profile.xml
+			for (int i = 0; i < MyData.quiz.getQuestions(); i++) {
+				Log.d("answer", "" + answers.get(i));
+			}
 
 			final Intent intent = new Intent(this, ProfileActivity.class);
-
+			int result = evaluateQuiz();
+			MyData.addQuiznResult(MyData.quiz.getId(), result);
 			AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(this);
 
 			alertDialog1.setTitle("Quiz Results");
-			alertDialog1.setMessage("Results: ");
+			alertDialog1.setMessage("Results: " + result + " out of "
+					+ MyData.quiz.getQuestions());
 
 			alertDialog1.setIcon(R.drawable.ic_launcher);
 
@@ -130,8 +135,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 
 			alertDialog1.show();
 
-		} else if (v == A || v == B || v == C || v == D || v == E || v == F
-				|| v == G || v == H || v == I) {
+		} else if (v == A || v == B || v == C || v == D || v == E || v == F) {
 			answerCurrent = ((Button) v).getText().toString();
 			new Thread(new Runnable() {
 
@@ -161,6 +165,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 
 						if ((null != aResponse)) {
 							answer.setText(answerCurrent);
+							answers.set(qn - 1, answerCurrent);
 						} else {
 
 							// ALERT MESSAGE
@@ -220,7 +225,6 @@ public class ClickerActivity extends Activity implements OnClickListener,
 					ClickerActivity.qn = question;
 					qnumber.setText(Integer.toString(question));
 					answer.setText("");
-					answerCurrent = null;
 				} else {
 
 					// ALERT MESSAGE
@@ -239,6 +243,7 @@ public class ClickerActivity extends Activity implements OnClickListener,
 			long id) {
 		// TODO Auto-generated method stub
 		TextView v = (TextView) view;
+		Toast.makeText(this, v.getText().toString(), Toast.LENGTH_SHORT);
 
 		if (tag) {
 			if (v.getText().equals("YOUR ACCOUNT")) {
@@ -246,12 +251,11 @@ public class ClickerActivity extends Activity implements OnClickListener,
 				startActivity(intent);
 
 			} else if (v.getText().equals("YOUR HISTORY")) {
-				Intent intent = new Intent(this, HistoryActivity.class);
+				Intent intent = new Intent(this, QuizActivity.class);
 				startActivity(intent);
 
 			} else if (v.getText().equals("SIGN OUT")) {
 				final Intent intent = new Intent(this, LoginActivity.class);
-				final Intent cancel = new Intent(this, ClickerActivity.class);
 
 				AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
@@ -263,20 +267,19 @@ public class ClickerActivity extends Activity implements OnClickListener,
 				dialog.setPositiveButton("Yes",
 						new DialogInterface.OnClickListener() {
 
-							public void onClick(DialogInterface dialog, int which) {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								ParseUser.logOut();
+								MyData.quiz = null;
 								startActivity(intent);
 							}
 						});
 				dialog.setNegativeButton("No",
 						new DialogInterface.OnClickListener() {
 
-							public void onClick(DialogInterface dialog, int which) {
-//this isnt working, only works the first time but if you try to log out again the dialog doesnt show up
-//								dialog.dismiss();
-								//so i added this even though i dont really like it.
-								startActivity(cancel);
-								
-								
+							public void onClick(DialogInterface dialog,
+									int which) {
+								dialog.dismiss();
 							}
 						});
 
@@ -291,5 +294,16 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	public void onNothingSelected(AdapterView<?> arg0) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public int evaluateQuiz() {
+		int totalPoint = 0;
+		// ArrayList<String> solutions = MyData.quiz.getAnswers();
+		for (int i = 0; i < MyData.quiz.getQuestions(); i++) {
+			if (MyData.quiz.getAnswers().get(i)
+					.equalsIgnoreCase(answers.get(i)))
+				totalPoint++;
+		}
+		return totalPoint;
 	}
 }

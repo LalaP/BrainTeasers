@@ -52,7 +52,7 @@ public class PasswordActivity extends Activity implements OnClickListener {
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				if (!MyRegex.isEmailValid(s.toString()))
-					email.setError("Invalid Email");
+					email.setError("");
 
 			}
 		});

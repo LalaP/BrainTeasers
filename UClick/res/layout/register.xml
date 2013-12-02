@@ -8,10 +8,9 @@
     <LinearLayout
         android:id="@+id/reg"
         android:layout_width="280dp"
-        android:layout_height="320dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@drawable/reg_bg"
         android:orientation="vertical" >
 
         <EditText
@@ -21,7 +20,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:gravity="center_vertical|top"
             android:hint="First Name"
@@ -45,6 +44,18 @@
             android:textSize="@dimen/txtsize" />
 
         <EditText
+            android:id="@+id/reg_sid"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:ems="10"
+            android:hint="Student ID"
+            android:singleLine="true"
+            android:textSize="@dimen/txtsize" />
+
+        <EditText
             android:id="@+id/reg_email"
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -57,6 +68,20 @@
             android:inputType="textEmailAddress"
             android:singleLine="true"
             android:textSize="@dimen/txtsize" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="5dp"
+            android:text="Password must contain more than 6 characters, and must contain at least one A-Z , a-z. 0-9. "
+            android:textColor="@color/txt"
+            android:textSize="@dimen/btntxtsize"
+            android:textStyle="italic"
+            android:typeface="normal" />
 
         <EditText
             android:id="@+id/reg_pass1"
@@ -79,7 +104,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="Confirm Password"
+            android:hint="Password**"
             android:inputType="textPassword"
             android:singleLine="true"
             android:textSize="@dimen/txtsize" />
@@ -92,7 +117,7 @@
         android:layout_height="35dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/button_small"
+        android:background="@drawable/btn_small"
         android:paddingLeft="20dp"
         android:text="Sign Up"
         android:textColor="@color/txtcolor1"
@@ -104,7 +129,7 @@
         android:layout_width="fill_parent"
         android:layout_height="35dp"
         android:layout_marginTop="0dp"
-        android:background="@color/btn" >
+        android:background="@drawable/lay_bg" >
 
         <Button
             android:id="@+id/regbtn_back"
@@ -113,7 +138,9 @@
             android:layout_height="25dp"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
+            android:layout_weight="0.3"
             android:background="@drawable/btn_small"
             android:minHeight="25dp"
             android:minWidth="40dp"
@@ -126,11 +153,11 @@
             android:id="@+id/textbox11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="0.13"
-            android:text="CREATE AN ACCOUNT"
+            android:layout_weight="0.4"
+            android:text="REGISTER"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/txtcolor1"
@@ -143,8 +170,10 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="65dp"
             android:layout_height="25dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
+            android:layout_weight="0.3"
             android:background="@drawable/btn_small"
             android:text="SIGN UP"
             android:textColor="@color/txtcolor1"
