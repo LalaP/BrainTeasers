@@ -13,7 +13,9 @@ import com.parse.ParseUser;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -70,9 +72,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-				if (!MyRegex.isEmailValid(s.toString())) {
-					email.setError("");
-				}
+//				if (!MyRegex.isEmailValid(s.toString())) {
+//					email.setError("");
+//				}
 			}
 		});
 		pass.addTextChangedListener(new TextWatcher() {
@@ -94,9 +96,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 			@Override
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
-				if (!MyRegex.isValidPassword(s.toString())) {
-					pass.setError("");
-				}
+//				if (!MyRegex.isValidPassword(s.toString())) {
+//					pass.setError("");
+//				}
 
 			}
 		});
@@ -149,6 +151,24 @@ public class LoginActivity extends Activity implements OnClickListener {
 					}
 				});
 
+			}
+			else{
+				AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(this);
+
+				alertDialog1.setTitle("Log in failed");
+				alertDialog1.setMessage("Email and Password don't match! ");
+
+				alertDialog1.setIcon(R.drawable.ic_launcher);
+
+				alertDialog1.setNeutralButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+								//startActivity(intent);
+							}
+						});
+
+				alertDialog1.show();
 			}
 
 		} else if (v == forgotpass) {

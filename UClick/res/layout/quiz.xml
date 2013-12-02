@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/menu_bg"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/mainmenu"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0.85"
+            android:animateLayoutChanges="true"
+            android:entries="@array/Menu"
+            android:gravity="right"
+            android:textColor="@color/txtcolor1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Quiz ID must be provided by your instructor. Check with your instructor if you are not sure which ID to enter here."
+            android:textColor="@color/txt"
+            android:textSize="@dimen/btntxtsize"
+            android:textStyle="italic"
+            android:typeface="normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp" >
+
+        <EditText
+            android:id="@+id/qz_qid"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.7"
+            android:ems="10"
+            android:hint="Quiz Number"
+            android:textSize="@dimen/btntxtsize" />
+
+        <Button
+            android:id="@+id/qz_start"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.3"
+            android:background="@drawable/btn_small"
+            android:text="Start"
+            android:textColor="@color/txtcolor1"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:text="You can search by instructor name, subject name and subject ID."
+            android:textColor="@color/txt"
+            android:textSize="@dimen/btntxtsize"
+            android:textStyle="italic"
+            android:typeface="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp" >
+
+        <EditText
+            android:id="@+id/qz_sid"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.7"
+            android:ems="10"
+            android:hint="Search info"
+            android:textSize="@dimen/btntxtsize" />
+
+        <Button
+            android:id="@+id/qz_search"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.3"
+            android:background="@drawable/btn_small"
+            android:text="Search"
+            android:textColor="@color/txtcolor1"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/lay_bg" >
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="QUIZ HISTORY"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/txtcolor1"
+            android:textSize="@dimen/txtsize"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|fill|end"
+        android:scrollbars="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            android:gravity="bottom|fill|end"
+            android:orientation="vertical" >
+
+            <ExpandableListView
+                android:id="@+id/pro_qzlist"
+                android:layout_width="fill_parent"
+                android:layout_height="400dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp" >
+            </ExpandableListView>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
