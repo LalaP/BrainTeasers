@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:ellipsize="marquee"
-    android:textColor="#808080"
+    android:textColor="#F7AF4A"
     android:textSize="15sp"
     />
 

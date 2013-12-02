@@ -2,7 +2,9 @@
     android:id="@android:id/text1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textColor="#02CEF7"
+    android:textColor="#633EF9"
     android:textSize="15sp"
-    android:text = "@string/action_settings"
+    android:fontFamily="Verdana"
+    android:text="Menu"
+    
      />

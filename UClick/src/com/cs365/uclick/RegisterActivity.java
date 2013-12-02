@@ -6,6 +6,8 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.os.ParcelableCompat;
@@ -172,6 +174,23 @@ public class RegisterActivity extends Activity implements OnClickListener {
 							Toast.LENGTH_SHORT).show();
 				}
 
+			}else{
+				AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(this);
+
+				alertDialog1.setTitle("Sign up failed");
+				alertDialog1.setMessage("Please enter all fields");
+
+				alertDialog1.setIcon(R.drawable.ic_launcher);
+
+				alertDialog1.setNeutralButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							public void onClick(DialogInterface dialog, int which) {
+								//startActivity(intent);
+							}
+						});
+
+				alertDialog1.show();
 			}
 
 		}
