@@ -6,7 +6,6 @@
     <string-array name="Menu">
         <item>MY ACCOUNT</item>
         <item>QUIZ</item>
-        <item>EDIT ACCOUNT</item>
         <item>SIGN OUT</item>
     </string-array>
     <string name="quiz_list">Quizzes</string>

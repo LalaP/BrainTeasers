@@ -61,8 +61,8 @@ public class HistoryActivity extends Activity implements OnClickListener,
 
 	private void createGroupList() {
 		quizList = new ArrayList<String>();
-		quizList.add("19831973");
-		quizList.add("12938107");
+//		quizList.add("19831973");
+//		quizList.add("12938107");
 
 	}
 

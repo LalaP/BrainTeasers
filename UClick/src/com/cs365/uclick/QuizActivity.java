@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.cs365.uclick.data.Quiz;
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -40,9 +41,14 @@ public class QuizActivity extends Activity implements OnClickListener,
 	private EditText searchbox, quizbox;
 	private Button search, start;
 	private boolean tag;
+	private ExpandableListView quizHistory;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
+		
+		
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.quiz);
 
@@ -158,6 +164,7 @@ public class QuizActivity extends Activity implements OnClickListener,
 		}
 
 	}
+
 
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,

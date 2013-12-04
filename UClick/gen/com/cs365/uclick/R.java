@@ -77,7 +77,6 @@ public final class R {
         public static final int clikbtn_f=0x7f0a000f;
         public static final int clikbtn_next=0x7f0a0006;
         public static final int clikbtn_submit=0x7f0a0012;
-        public static final int edit=0x7f0a0046;
         public static final int hist=0x7f0a0045;
         public static final int hist_search=0x7f0a0016;
         public static final int histbtn_search=0x7f0a0017;
@@ -119,7 +118,7 @@ public final class R {
         public static final int regbtn_reg=0x7f0a0041;
         public static final int regbtn_reg2=0x7f0a003e;
         public static final int scrollview22=0x7f0a0019;
-        public static final int signout=0x7f0a0047;
+        public static final int signout=0x7f0a0046;
         public static final int textView1=0x7f0a0028;
         public static final int textView2=0x7f0a0032;
         public static final int textView3=0x7f0a002c;
