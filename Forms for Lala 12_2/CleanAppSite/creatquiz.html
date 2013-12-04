@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Create Quiz</title>
+<link type="text/css" rel="stylesheet" href="aStyle.css" />
+<link type="text/css" rel="stylesheet" href="footStyle.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+
+</head>
+<!--The Body of the page-->
+<body>
+        <!--The wrapper of main page used for positioning and centering-->        
+        <div id="wrap">
+            <!--Header of the age-->
+        <header id="appHeader">
+        </header>
+        <nav id="navList">
+            <ul id="navListElement">
+                <a href="index.html"><li>Welcome</li></a> |
+                <a href="about.html"><li>About</li></a> |
+                <a href="tutorial.html"><li>Get Started</li></a> |
+                <a href="login.html"><li>Sign in / Sign up</li></a> |
+				<a href="creatquiz.html"><li>Create Quiz</li></a>
+            </ul>
+        </nav>
+        <!--Header of the age-->    
+            <header>
+        </header>  
+		 <div id="login">
+			<h2><span class="fontawesome-lock"></span> Create Quiz</h2>
+				<form  method="POST">
+					<fieldset>
+						<p><label for="username">User Name</label></p>
+						<p><input type="username" id="username" size="52"></p> 
+						<p><label for="professorName">Professor Name</label></p>
+						<p><input type="professorName" id="professorName" size="52"></p>
+						<p><label for="subject">Subject</label></p>
+						<p><input type="subject" id="subject"size="52"></p>
+						<p><label for="noQ">Number of Questions</label></p>
+						<p><input type="noQ" id="noQ" size="52"></p>
+						<p><label for="noQ">Enter the Question number followed by the correct Answer</label></p>
+						<p><textarea type="answers" id="answers" rows ="4" cols="40"></textarea></p>
+						<p>Example:"1 a,2 a,3 c"</p>
+						<p><input type="submit" value="Submit"></p>
+
+					</fieldset>
+				</form>
+		</div>  
+         <!--Footer of the page-->  
+        <footer id="appFooter">
+                <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+            <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"  /></a>
+            <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"  /> </a>
+        </footer>
+    </div>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

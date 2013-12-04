@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS for the footer */
+
+#appFooter{
+        clear:both;
+        height:auto;
+        margin:0px;
+        background-color: #231F20;
+}
+#appFooter img{
+        display: inline-block;
+    padding-right:0px; 
+        list-style-type:none;
+        border-radius: 5px;
+}
+#appFooter a{
+        margin:2px;  /* the space between images */
+        border: 2px solid #333; /* the border and its color */
+        display:inline-block; /* fo make pictures fited to the borders */
+        border-radius: 10px;
+}
+#appFooter a:hover{
+        border:2px solid white;
+        transition:all .3s ease-in;
+}
