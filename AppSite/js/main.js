@@ -2,20 +2,10 @@
 window.Router = Backbone.Router.extend({
 
     routes: {
-        "": "homeFun",
-        "login" : "loginFun",
-        "register" : "registerFun",
-        "about" : "goToAbout"       
-    },
-
-    goToAbout: function() {
-        if(!this.About){
-            this.about = new About();
-            this.about.render();
-        }else{
-            this.about.render();
-        }
-        $("#container").html(this.about.el);
+        "":"homeFun",
+        "login":"loginFun",
+        "register":"registerFun",
+        "about":"aboutFun"       
     },
 
     initialize: function () {
@@ -50,17 +40,27 @@ window.Router = Backbone.Router.extend({
     registerFun: function(){
         if(!this.Register){
             this.registerPage = new Register();
-            this.registerage.render()
+            this.registerPage.render()
         }else{
-            this.registerPage.render();
+            this.Register.delegateEvents();
         }
-        $("#container").html(this.refisterPage.el);
+        $("#container").html(this.registerPage.el);        
+    },
+
+    aboutFun: function() {
+        if(!this.About){
+            this.aboutPage = new About();
+            this.aboutPage.render()
+        }else{
+            this.About.delegateEvents();
+        }
+        $("#container").html(this.aboutPage.el); 
     }
 });
 // end of routs and functions definition
 
 // 
-templateLoader.load(["Home","Login","Register"],
+templateLoader.load(["Home","Login","Register","About"],
     function () {
         app = new Router();
         Backbone.history.start();

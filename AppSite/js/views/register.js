@@ -23,8 +23,8 @@ window.Register = Backbone.View.extend({
 		user.set("username", email);
 		user.set("password", password);
 		user.set("email", email);
-		user.set("fName", firstname);
-		user.set("lName", lastname);
+		user.set("firstname", firstname);
+		user.set("lastname", lastname);
 		 
 		user.signUp(null, {
 		  success: function(user) {
