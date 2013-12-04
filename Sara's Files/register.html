@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Uclick Login</title>
+<link type="text/css" rel="stylesheet" href="aStyle.css" />
+<link type="text/css" rel="stylesheet" href="footStyle.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+
+<!--The Body of the page-->
+<body>
+    <!--The wrapper of main page used for positioning and centering-->        
+    <div id="wrap">
+        <!--Header of the age-->
+        <header id="appHeader">
+        </header>
+        <nav id="navList">
+            <ul id="navListElement">
+                <a href="index.html"><li>Welcome</li></a> |
+                <a href="about.html"><li>About</li></a> |
+                <a href="tutorial.html"><li>Get Started</li></a> |
+                <a href="login.html"><li>Sign in / Sign up</li></a> |
+				<a href="creatquiz.html"><li>Create Quiz</li></a>
+            </ul>
+        </nav>
+        <!--Header of the age-->    
+		<div id="login">
+
+						<h2><span class="fontawesome-lock"></span>Sign Up</h2>
+						<form action="javascript:void(0);" method="POST">
+							<fieldset>
+								<p><label for="fullname">Full Name</label></p>
+								<p><input type="fullname" id="fullname" size="52"></p>
+								<p><label for="username">User Name</label></p>
+								<p><input type="username" id="username" size="52"></p>
+								<p><label for="email">E-mail</label></p>
+								<p><input type="email" id="email" value="mail@address.com" ></p>
+								<p><label for="password">Password</label></p>
+								<p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p>
+								<p><label for="rpassword">Retype Password</label></p>
+								<p><input type="rpassword" id="rpassword" size="52" ></p>
+								<p><input type="submit" value="Sign In"></p>
+							</fieldset>
+						</form>
+						</div> <!-- end login -->
+       
+                
+     <!--Footer of the page-->  
+        <footer id="appFooter">
+                <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+            <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"  /></a>
+            <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"  /> </a>
+        </footer>
+    </div>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
