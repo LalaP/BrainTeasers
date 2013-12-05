@@ -39,21 +39,20 @@ public final class R {
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int btn_back=0x7f020001;
-        public static final int btn_round=0x7f020002;
-        public static final int btn_round_=0x7f020003;
-        public static final int btn_small=0x7f020004;
-        public static final int button1=0x7f020005;
-        public static final int button_small=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int lay_bg=0x7f020008;
-        public static final int logo=0x7f020009;
-        public static final int mainbg=0x7f02000a;
-        public static final int menu_bg=0x7f02000b;
-        public static final int reg_back=0x7f02000c;
-        public static final int reg_bg=0x7f02000d;
-        public static final int reg_finish=0x7f02000e;
-        public static final int round_bg=0x7f02000f;
-        public static final int uclick=0x7f020010;
+        public static final int btn_round_=0x7f020002;
+        public static final int btn_small=0x7f020003;
+        public static final int button1=0x7f020004;
+        public static final int button_small=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int lay_bg=0x7f020007;
+        public static final int logo=0x7f020008;
+        public static final int mainbg=0x7f020009;
+        public static final int menu_bg=0x7f02000a;
+        public static final int reg_back=0x7f02000b;
+        public static final int reg_bg=0x7f02000c;
+        public static final int reg_finish=0x7f02000d;
+        public static final int round_bg=0x7f02000e;
+        public static final int uclick=0x7f02000f;
     }
     public static final class id {
         public static final int MenuLayout=0x7f0a0000;
