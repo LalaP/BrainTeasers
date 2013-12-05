@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
+<!-- written by: Sara Alraddady
+ Date modified 12.05.2013 -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Uclick Login</title>
+<title>Add Class</title>
 <link type="text/css" rel="stylesheet" href="aStyle.css" />
 <link type="text/css" rel="stylesheet" href="footStyle.css"/>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
@@ -15,36 +17,39 @@
         <!--Header of the age-->
         <header id="appHeader">
         </header>
-        <nav id="navList">
-           <ul id="navListElement">
+	<style>
+		h1 {color:#F5A545;}
+		h1 {font-family: 'Signika Negative', sans-serif;}
+		h1 {font-size: 200%;}
+		p {color:#000;}
+		p {font-family: 'Signika Negative', sans-serif;}
+		p {font-size: 120%;}
+		
+	</style>
+    <nav id="navList">
+    	<ul id="navListElement">
                 <a href="index.html"><li>Welcome</li></a> |
                 <a href="about.html"><li>About</li></a> |
                 <a href="login.html"><li>Sign in / Sign up</li></a> |
 				<a href="professorHome.html"><li>Professor HomePage</li></a>
             </ul>
-        </nav>
+	</nav>
         <!--Header of the age-->    
-		<div id="login">
-
-						<h2><span class="fontawesome-lock"></span>Sign Up</h2>
-						<form action="javascript:void(0);" method="POST">
-							<fieldset>
-								<p><label for="fullname">Full Name</label></p>
-								<p><input type="fullname" id="fullname" size="52"></p>
-								<p><label for="username">User Name</label></p>
-								<p><input type="username" id="username" size="52"></p>
-								<p><label for="email">E-mail</label></p>
-								<p><input type="email" id="email" value="mail@address.com" ></p>
-								<p><label for="password">Password</label></p>
-								<p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p>
-								<p><label for="rpassword">Retype Password</label></p>
-								<p><input type="rpassword" id="rpassword" size="52" ></p>
-								<p><input type="submit" value="Sign In"></p>
-							</fieldset>
-						</form>
-						</div> <!-- end login -->
-       
-                
+	<div id="login">
+		<h2><span class="fontawesome-lock"></span>Add Class</h2>
+			<form action="javascript:void(0);" method="POST">
+				<fieldset>
+					<p><label for="className">Class Name</label></p>
+					<p><input type="className" id="className" size="52"></p>
+					<p><label for="classNo">Class Number</label></p>
+					<p><input type="classNo" id="classNo" size="52"></p>
+					<p><label for="subject">Subject</label></p>
+					<p><input type="subject" id="subject" size="52"></p>
+					<p><input type="submit" value="Submit" onclick="window.location='createquiz.html'";></p>
+				</fieldset>
+			</form>
+	</div>
+	            
      <!--Footer of the page-->  
         <footer id="appFooter">
                 <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
