@@ -5,11 +5,13 @@ window.Router = Backbone.Router.extend({
         "":"homeFun",
         "login":"loginFun",
         "register":"registerFun",
-        "about":"aboutFun"       
+        "about":"aboutFun",
+        "logout":"logoutFun"       
     },
 
     initialize: function () {
         Parse.initialize("DLRqHE5y4wZLfv6LDLZdoZPd4yLe2HCOkOymvgV2", "iHwkFd3jwRb8yCOr5xkCWwpXuEyRCpxQ3fZJgh07");
+
     },
 
     homeFun: function () {
@@ -55,6 +57,21 @@ window.Router = Backbone.Router.extend({
             this.About.delegateEvents();
         }
         $("#container").html(this.aboutPage.el); 
+    },
+
+    logoutFun: function(){
+        if(currentUser){
+            Parse.User.logOut();
+        }
+        else{}
+        var currentUser = Parse.User.current();  
+        if(!this.Login){
+            this.loginPage = new Login();
+            this.loginPage.render();
+        }else{
+            this.Login.delegateEvents();
+        }
+        $("#container").html(this.loginPage.el);        
     }
 });
 // end of routs and functions definition
