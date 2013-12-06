@@ -295,7 +295,14 @@ public class ProfileActivity extends Activity implements OnItemSelectedListener 
 							public void onClick(DialogInterface dialog,
 									int which) {
 								ParseUser.logOut();
+								   // 
+								    intent.putExtra("finish", true); 
+								    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | 
+								                    Intent.FLAG_ACTIVITY_CLEAR_TASK |
+								                    Intent.FLAG_ACTIVITY_NEW_TASK);
+								   // 
 								startActivity(intent);
+							   
 							}
 						});
 				dialog.setNegativeButton("No",
