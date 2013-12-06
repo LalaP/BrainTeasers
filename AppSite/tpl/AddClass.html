@@ -1,0 +1,50 @@
+<!--The wrapper of main page used for positioning and centering-->        
+<div id="wrap">
+<!--Header of the age-->
+    <nav id="navList">
+        <ul id="navListElement">
+            <li><a href="index.html">Home</a></li> |
+            <li><a href="#/about">About</a></li> |
+            <li><a href="tutorial.html">Get Started</a></li> |
+            <li><a href="#/login">Sign in</a></li> 
+        </ul>
+    </nav>
+<!--Header of the age--> 
+    <h1>New Professor Registration</h1>
+	<p> It seems that we do not have your information. Please sign up in few seconds and enjoy Uclick!</p>
+  	<br/><br/>   
+	<div id="login">
+		<h2><span class="fontawesome-lock"></span> Quiz Information</h2>
+            <form  method="POST">
+                <fieldset>
+                    <p><label for="term">Select Term</label></p>
+                    <select name = "termdropdown" id="termFieldId">
+	                    <option value = "fall" > Fall</option>
+	                    <option value = "winter" >Winter</option>
+	                    <option value = "spring" >Spring</option>
+                    </select>
+                    <p><label for="year">Select Year</label></p>
+                    <select name = "yeardropdown">
+                        <option value = "2011" > 2011</option>
+                        <option value = "2012" >2012</option>
+                        <option value = "2013" >2013</option>
+                        <option value = "2014" >2014</option>
+                    </select>
+                    <p><label for="department">Course</course></p>
+                    <p><input type="text" id="departmentFieldId" size="52"></p>
+                    <p><label for="coursenum">Course Number</label></p>
+                    <p><input type="text" id="courseFieldId" size="52"></p>
+                    <p><label for="sectionid">Section ID</label></p>
+                    <p><input type="text" id="sectionFieldId" size="52"></p>
+                    <button id="addClassBtn" class="btn btn-primary">Add Class</button>
+					<button class="btn" id="clearBtn" input type="reset">Clear</button>
+                </fieldset>
+            </form>
+	</div> <!-- end login -->
+<!--Footer of the page-->  
+    <footer id="appFooter">
+        <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+        <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"  /></a>
+        <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"  /> </a>
+    </footer>
+</div>

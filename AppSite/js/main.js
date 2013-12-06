@@ -6,7 +6,8 @@ window.Router = Backbone.Router.extend({
         "login":"loginFun",
         "register":"registerFun",
         "about":"aboutFun",
-        "logout":"logoutFun"       
+        "logout":"logoutFun",
+        "newClass":"addClassFun"       
     },
 
     initialize: function () {
@@ -17,8 +18,9 @@ window.Router = Backbone.Router.extend({
     homeFun: function () {
         var currentUser = Parse.User.current();
         if(currentUser){
+            var name = Parse.User.current().get('username');           
             if (!this.Home) {
-                this.homePage = new Home();
+                this.homePage = new Home({username:name});
                 this.homePage.render();
             } else {
                 this.homePage.render();
@@ -68,7 +70,23 @@ window.Router = Backbone.Router.extend({
             this.Login.delegateEvents();
         }
         $("#container").html(this.loginPage.el);        
-    }
+    },
+
+    //  addClassFun: function () {
+    //     var currentUser = Parse.User.current();
+    //     if(currentUser){
+    //         var name = Parse.User.current().get('username');           
+    //         if (!this.AddClass) {
+    //             this.addClassPage = new AddClass({username:name});
+    //             this.addClassPage.render();
+    //         } else {
+    //             this.addClassPage.render();
+    //         }
+    //         $("#container").html(this.addClassPage.el);
+    //     }else{
+    //         window.location.replace('#/login');
+    //     }
+    // }
 });
 // end of routs and functions definition
 
