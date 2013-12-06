@@ -29,14 +29,11 @@ window.Home = Backbone.View.extend({
 
     events:{
         'click #refreshBtn':'testEffect', 
-        'click #addClassBtn':'addClassFun'        
     },
 
     testEffect:function(){
     var name = Parse.User.current().get('username');
     $('#myName').text("you are a smart Girl");        
     }
-
-    
 });
    

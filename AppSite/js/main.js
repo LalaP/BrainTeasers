@@ -72,26 +72,26 @@ window.Router = Backbone.Router.extend({
         $("#container").html(this.loginPage.el);        
     },
 
-    //  addClassFun: function () {
-    //     var currentUser = Parse.User.current();
-    //     if(currentUser){
-    //         var name = Parse.User.current().get('username');           
-    //         if (!this.AddClass) {
-    //             this.addClassPage = new AddClass({username:name});
-    //             this.addClassPage.render();
-    //         } else {
-    //             this.addClassPage.render();
-    //         }
-    //         $("#container").html(this.addClassPage.el);
-    //     }else{
-    //         window.location.replace('#/login');
-    //     }
-    // }
+    addClassFun: function(){
+        var currentUser = Parse.User.current();
+        if(currentUser){
+            var name = Parse.User.current().get('username');           
+            if (!this.AddClass) {
+                this.addClassPage = new AddClass({username:name});
+                this.addClassPage.render();
+            } else {
+                this.addClassPage.render();
+            }
+            $("#container").html(this.addClassPage.el);
+        }else{
+            window.location.replace('#/login');
+        }
+    }
 });
 // end of routs and functions definition
 
 // 
-templateLoader.load(["Home","Login","Register","About"],
+templateLoader.load(["Home","Login","Register","About","AddClass"],
     function () {
         app = new Router();
         Backbone.history.start();
