@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>App Website</title>
+<link type="text/css" rel="stylesheet" href="aStyle.css" />
+<link type="text/css" rel="stylesheet" href="footStyle.css"/>
+</head>
+<!--The Body of the page-->
+<body>
+		<meta charset="utf-8">
+			<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
+        <!--The wrapper of main page used for positioning and centering-->        
+        <div id="wrap">
+            <!--Header of the age-->
+        <header id="appHeader">
+        </header>
+        
+        <!--Header of the age-->    
+		<nav id="navList" style=b>
+            <ul id="navListElement">
+                <a href="index.html"><li>Welcome</li></a> |
+                <a href="about.html"><li>About</li></a> |
+                <a href="tutorial.html"><li>Get Started</li></a> |
+                <a href="login.html"><li>Sign in / Sign up</li></a> |
+				<a href="creatquiz.html"><li>Create Quiz</li></a>
+            </ul>
+        </nav>
+        <table> 
+			<tr>
+				<td>
+					<section id="content">
+						<iframe width="600" height="430" src="http://www.cincopa.com/media-platform/iframe.aspx?fid=AMOAnXLWWp8x" frameborder="0" allowfullscreen scrolling="no"></iframe>
+				
+					</section>
+				</td>
+				<td></td> <td></td> <td></td> 
+				<td>
+					<p>
+						<div id="login">
+
+						<h2><span class="fontawesome-lock"></span>Sign In</h2>
+						<form action="javascript:void(0);" method="POST">
+							<fieldset>
+								<p><label for="email">E-mail address</label></p>
+								<p><input type="email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+								<p><label for="password">Password</label></p>
+								<p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+								<p><input type="submit" value="Sign In"></p>
+
+							</fieldset>
+						</form>
+						</div> <!-- end login -->
+					</p>
+				</td
+			</tr>
+		</table>
+        <!--Footer of the page-->  
+        <footer id="appFooter">
+                <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+            <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"  /></a>
+            <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"  /> </a>
+        </footer>
+    </div>
+</body>
+</html>

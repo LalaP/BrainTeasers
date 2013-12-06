@@ -1,0 +1,55 @@
+
+<!--The wrapper of main page used for positioning and centering-->        
+<div id="wrap">
+<!--Header of the age-->
+    <nav id="navList" style=b>
+        <ul id="navListElement">
+            <li><a href="index.html">Home</a></li> |
+            <li><a href="#/about">About</a></li> |
+            <li><a href="tutorial.html">Get Started</a></li> |
+            <li><a href="#/register">Sign up</a></li>
+        </ul>
+    </nav>
+<!--Main content of the age-->
+    <table> 
+        <tr>
+            <td>
+                <section id="content">
+                    <iframe width="600" height="430" src="http://www.cincopa.com/media-platform/iframe.aspx?fid=AMOAnXLWWp8x" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                </section>
+            </td>
+            <td>
+                <p>
+                    <div id="login">
+<!-- Login Form -->             
+                        <h2><span class="fontawesome-lock"></span>Sign In</h2>
+                        <form action="javascript:void(0);" method="POST">
+                            <fieldset>
+                                <p><label for="email">E-mail address</label></p>
+                                <p><input type="email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p> 
+                                <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+                                <p><label for="password">Password</label></p>
+                                <p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> 
+                                <!-- JS because of IE support; better: placeholder="password" -->
+                                <p><button class="btn btn-primary" id="loginBtn">Login</button>
+                                <button class="btn" id="clearBtn" input type="reset">Clear</button><p>
+                                <p>You forgot your assword ! No worries: 
+                                    <ol>
+                                        <li> Enter your email</li>
+                                        <li> Press Forgot Password button</li>
+                                    </ol>
+                                <p><button class="btn" id="resetPass">Forgot Password</button></p>
+                            </fieldset>
+                        </form>
+                    </div> <!-- end login -->
+                </p>
+            </td
+        </tr>
+    </table>
+<!--Footer of the page-->  
+    <footer id="appFooter">
+        <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+        <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"/></a>
+        <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"/> </a>
+    </footer>
+</div>

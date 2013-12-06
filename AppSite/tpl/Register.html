@@ -1,0 +1,43 @@
+<!--The wrapper of main page used for positioning and centering-->        
+<div id="wrap">
+<!--Header of the age-->
+    <nav id="navList">
+        <ul id="navListElement">
+            <li><a href="index.html">Home</a></li> |
+            <li><a href="#/about">About</a></li> |
+            <li><a href="tutorial.html">Get Started</a></li> |
+            <li><a href="#/login">Sign in</a></li> 
+        </ul>
+    </nav>
+<!--Header of the age--> 
+    <h1>New Professor Registration</h1>
+	<p> It seems that we do not have your information. Please sign up in few seconds and enjoy Uclick!</p>
+  	<br/><br/>   
+	<div id="login">
+		<h2><span class="fontawesome-lock"></span>Sign Up</h2>
+		<form action="javascript:void(0);">
+			<fieldset>
+				<p><label for="firstName">First Name</label></p>
+				<p><input name="fName" id="fName" type="text" placeholder="First Name here... " size="52"></p>
+				<p><label for="lastName">Last Name</label></p>
+				<p><input name="lName" id="lName" type="text" placeholder="Last Name here... " size="52"/><p/>
+				<p><label for="username">E-Mail (User Name)</label></p>
+				<p><input name="email" type="email" id="email" value="mail@address.com" ></p>
+				<p><label for="password">Password</label></p>
+				<p><input name="password" type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p>
+				<p><label for="rpassword">Retype Password</label></p>
+				<p><input name="rpassword" type="password" id="rpassword" size="52" ></p>
+				<p>
+					<button id="signup" class="btn btn-primary">Submit</button>
+					<button class="btn" id="clearBtn" input type="reset">Clear</button>
+				</p>
+			</fieldset>
+		</form>
+	</div> <!-- end login -->
+<!--Footer of the page-->  
+    <footer id="appFooter">
+        <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+        <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"  /></a>
+        <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"  /> </a>
+    </footer>
+</div>
