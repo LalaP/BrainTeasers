@@ -60,11 +60,7 @@ window.Router = Backbone.Router.extend({
     },
 
     logoutFun: function(){
-        if(currentUser){
-            Parse.User.logOut();
-        }
-        else{}
-        var currentUser = Parse.User.current();  
+        Parse.User.logOut();
         if(!this.Login){
             this.loginPage = new Login();
             this.loginPage.render();
