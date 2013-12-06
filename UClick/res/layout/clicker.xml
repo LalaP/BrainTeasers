@@ -9,6 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="35dp"
         android:background="@drawable/menu_bg" >
+        
 
         <TextView
             android:id="@+id/clik_qzname"
@@ -230,5 +231,18 @@
             android:textSize="@dimen/btntxtsize"
             android:typeface="serif" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/clik_ans"
+        android:layout_marginLeft="15dp"
+        android:paddingRight="40dip"
+        android:textColor="#633EF9"
+    	android:textSize="15sp"
+    	android:fontFamily="Verdana"
+        android:text="Time: " />
 
 </RelativeLayout>

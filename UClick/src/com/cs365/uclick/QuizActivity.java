@@ -46,7 +46,7 @@ public class QuizActivity extends Activity implements OnClickListener,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
-		
+
 		
 		
 		super.onCreate(savedInstanceState);
@@ -68,7 +68,8 @@ public class QuizActivity extends Activity implements OnClickListener,
 
 		search.setOnClickListener(this);
 		start.setOnClickListener(this);
-
+		
+		
 		createGroupList();
 		createCollection();
 		quizView = (ExpandableListView) findViewById(R.id.pro_qzlist);
@@ -218,5 +219,7 @@ public class QuizActivity extends Activity implements OnClickListener,
 		// TODO Auto-generated method stub
 
 	}
+	
+	
 
 }

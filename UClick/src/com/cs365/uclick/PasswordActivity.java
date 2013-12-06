@@ -31,7 +31,8 @@ public class PasswordActivity extends Activity implements OnClickListener {
 //		back = (Button) this.findViewById(R.id.passbtn_back);
 //		send1 = (Button) this.findViewById(R.id.passbtn_send);
 //		send2 = (Button) this.findViewById(R.id.passbtn_send2);
-		Parse.initialize(this, "DLRqHE5y4wZLfv6LDLZdoZPd4yLe2HCOkOymvgV2", "AJ6AY2uB2sPQP2Zbs5XiLmoo1OuIcVYzO0I4D0hG"); 
+		Parse.initialize(this, "LNwKxfw8SCsqlhkQfGmY1Mt3Puj7pppNWTD5TObC",
+				"eEGIDAFgj2sh9ukvNJnIXDwooqWcHfjb1tdqgwz6");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.password);
 

@@ -2,6 +2,7 @@ package com.cs365.uclick;
 
 import java.util.ArrayList;
 import java.util.Currency;
+import java.util.Timer;
 
 import com.parse.ParseUser;
 
@@ -13,6 +14,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -38,6 +40,11 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	private boolean tag;
 	private TextView quizname;
 	private ArrayList<String> answers;
+	private TextView text;
+	final long startTime = 30000;
+	final long interval = 1000;
+	private MalibuCountDownTimer countDownTimer;
+    private boolean timerHasStarted = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +91,46 @@ public class ClickerActivity extends Activity implements OnClickListener,
 		D.setOnClickListener(this);
 		E.setOnClickListener(this);
 		F.setOnClickListener(this);
+		
+		text = (TextView) this.findViewById(R.id.timer);
+		//timeElapsedView = (TextView) this.findViewById(R.id.timeElapsed);
+		countDownTimer = new MalibuCountDownTimer(startTime);
+        text.setText(text.getText() + String.valueOf(startTime));
+        countDownTimer.start();
+        timerHasStarted = true;
+        
 
 	}
+	 public class MalibuCountDownTimer extends CountDownTimer
+     {
+
+         public MalibuCountDownTimer(long startTime)
+             {
+                 super(startTime, interval);
+             }
+
+         @Override
+         public void onFinish()
+             {
+                 text.setText("Time's up!");
+                 if (qn < MyData.quiz.getQuestions()) {
+     				new Thread(new myRunnable(true)).start();
+     				countDownTimer.start();
+                     timerHasStarted = true;
+                    
+     			}
+
+             }
+
+         @Override
+         public void onTick(long millisUntilFinished)
+             {
+                 text.setText("Time remain:" + millisUntilFinished);
+               
+             }
+     }
+	 
+
 
 	@Override
 	public void onClick(View v) {
@@ -94,6 +139,8 @@ public class ClickerActivity extends Activity implements OnClickListener,
 
 			if (qn < MyData.quiz.getQuestions()) {
 				new Thread(new myRunnable(true)).start();
+				countDownTimer.start();
+                timerHasStarted = true;
 			}
 
 		} /*
@@ -182,6 +229,8 @@ public class ClickerActivity extends Activity implements OnClickListener,
 	}
 
 	private class myRunnable implements Runnable {
+		
+		
 		private boolean isIncreasing = false;
 
 		public myRunnable(boolean isIncreasing) {
