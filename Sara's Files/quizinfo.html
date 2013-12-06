@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Create Quiz</title>
+<link type="text/css" rel="stylesheet" href="aStyle.css" />
+<link type="text/css" rel="stylesheet" href="footStyle.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+
+</head>
+<!--The Body of the page-->
+<body>
+        <!--The wrapper of main page used for positioning and centering-->        
+        <div id="wrap">
+            <!--Header of the age-->
+        <header id="appHeader">
+        </header>
+        <nav id="navList">
+            <ul id="navListElement">
+                <a href="index.html"><li>Welcome</li></a> |
+                <a href="about.html"><li>About</li></a> |
+                <a href="tutorial.html"><li>Get Started</li></a> |
+                <a href="login.html"><li>Sign in / Sign up</li></a> |
+				<a href="creatquiz.html"><li>Create Quiz</li></a>
+            </ul>
+        </nav>
+        <!--Header of the age-->    
+            <header>
+        </header>  
+		 <div id="login">
+			<h2><span class="fontawesome-lock"></span> Quiz Information</h2>
+				<form  method="POST">
+					<fieldset>
+						<p><label for="term">Select Term</label></p>
+						<select name = "termdropdown">
+						<option value = "fall" > Fall</option>
+						<option value = "winter" >Winter</option>
+						<option value = "spring" >Spring</option>
+						</select>
+						<p><label for="year">Select Year</label></p>
+						<select name = "yeardropdown">
+						<option value = "2011" > 2011</option>
+						<option value = "2012" >2012</option>
+						<option value = "2013" >2013</option>
+						<option value = "2014" >2014</option>
+						</select>
+						<p><label for="course">Course</course></p>
+						<p><input type="course" id="course"size="52"></p>
+						<p><label for="coursenum">Course Number</label></p>
+						<p><input type="coursenum" id="coursenum" size="52"></p>
+						<p><label for="sectionid">Section ID</label></p>
+						<p><input type="sectionid" id="Sectionid" size="52"></p>
+						<p><input type="submit" value="Submit"></p>
+
+					</fieldset>
+				</form>
+		</div>  
+         <!--Footer of the page-->  
+        <footer id="appFooter">
+                <a href="https://www.facebook.com/pages/Uclick-App/181578885364289"><img src="images/f.jpg"  /></a>
+            <a href="https://twitter.com/UclickApp"><img src="images/t.jpg"  /></a>
+            <a href="mailto:uclick.app@gmail.com?Subject=Hello%20again" target="_top"> <img src="images/e.jpg"  /> </a>
+        </footer>
+    </div>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
